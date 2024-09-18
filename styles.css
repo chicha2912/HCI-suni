@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .iphone {
+    width: 375px; /* Ancho típico de iPhone */
+    height: 812px; /* Alto típico de iPhone */
+    background-color: #FFF;
+    border-radius: 40px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: #000;
+  }
+  
