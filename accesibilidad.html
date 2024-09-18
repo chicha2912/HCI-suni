@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulación iPhone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="iphone">
+    <div class="accessibility-button" id="accessibility-button" aria-label="Menú de accesibilidad">
+        ♿
+    </div>
+
+    <div class="accessibility-menu" id="accessibility-menu" aria-hidden="true">
+        <h2 class="menu-title">Menú de Accesibilidad</h2>
+        <div class="subsection">
+            <span>Navegacion y lectura</span>
+            <ul>
+                <li>
+                    <div>Lector de pantalla</div>
+                    <input type="checkbox">
+                </li>
+                <li>
+                    <div>Retroalimentación de botones</div>
+                    <input type="checkbox">
+                </li>
+                <li>
+                    <div>Navegación por voz</div>
+                    <input type="checkbox">
+                </li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <span>Contenido</span>
+            <ul>
+                <li>
+                    <div>Zoom</div>
+                    <div class="slider-container">
+                        <input type="range" id="slider-control" min="1" max="3" step="0.1" value="1">
+                        <span id="slider-value">100%</span>
+                    </div>                        
+                </li>
+                <li>
+                    <div>Tipo de fuente</div>
+                    <select name="select">
+                        <option value="value1" selected>Por defecto</option>
+                        <option value="value2">Arial</option>
+                        <option value="value3">sans-serif</option>
+                    </select>
+                </li>
+                <li>
+                    <div>Tamaño de fuente</div>
+                    <div class="slider-container">
+                        <input type="range" id="slider-control" min="10" max="30" step="1" value="16">
+                        <span id="slider-value">16px</span>
+                    </div>                        
+                </li>
+                <li>
+                    <div>Brillo</div>
+                    <div class="slider-container">
+                        <input type="range" id="slider-control" min="1" max="3" step="0.1" value="1">
+                        <span id="slider-value">100%</span>
+                    </div> 
+                </li>
+                <li>
+                    <div>Resaltar titulos</div>
+                    <input type="checkbox">
+                </li>
+                <li>
+                    <div>Resaltar enlaces</div>
+                    <input type="checkbox">
+                </li>
+                <li>
+                    <div>Iconos en botones</div>
+                    <input type="checkbox">
+                </li>
+                <li>
+                    <div>Subitulos y transcripciones</div>
+                    <input type="checkbox">
+                </li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <span>Color</span>
+            <ul>
+                <li>
+                    <div>Color de fuente</div>
+                    <input type="color">
+                </li>
+                <li>
+                    <div>Color de fondo</div>
+                    <input type="color">
+                </li>
+                <li>
+                    <div>Contraste</div>
+                    <div>
+                        <button>Claro</button>
+                        <button>Oscuro</button>
+                    </div>
+                </li>
+                <li>
+                    <div>Saturacion</div>
+                    <div>
+                        <button>Baja</button>
+                        <button>Alta</button>
+                        <button>Monocromatico</button>
+                    </div>
+                </li>
+                <li>
+                    <div>Daltonismo</div>
+                    <select name="select">
+                        <option value="value1" selected>No</option>
+                        <option value="value2">Deuteranomalía</option>
+                        <option value="value3">Protanomalía</option>
+                        <option value="value4">Tritanopia</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <span>Sonido</span>
+            <ul>
+                <li>
+                    <div>Volumen</div>
+                    <div class="slider-container">
+                        <input type="range" id="slider-control" min="0" max="300" step="5" value="100">
+                        <span id="slider-value">100%</span>
+                    </div>  
+                </li>
+                <li>
+                    <div>Silencio</div>
+                    <input type="checkbox">
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+
+  </div>
+    
+
+  <script>
+    const button = document.getElementById('accessibility-button');
+    const menu = document.getElementById('accessibility-menu');
+
+    button.addEventListener('click', () => {
+        const isVisible = menu.style.display === 'block';
+        menu.style.display = isVisible ? 'none' : 'block'; // Alternar visibilidad
+        menu.setAttribute('aria-hidden', isVisible); // Actualizar atributo ARIA
+    });
+
+</script>
+</body>
+</html>
