@@ -21,4 +21,142 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     border: #000;
   }
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Accesibilidad */
+
+  .accessibility-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007AFF;
+    color: #FFF;
+    border-radius: 50%;
+    width: 50px; 
+    height: 50px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; 
+    cursor: pointer; 
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s; 
+}
+.accessibility-button:hover {
+  background-color: #005BB5;
+}
+
+
+
+.accessibility-menu {
+  position: absolute; /* Posicionamiento absoluto dentro del contenedor .iphone */
+  bottom: 80px; /* Espaciado desde la parte inferior */
+  right: 20px; /* Espaciado desde la derecha */
+  width: 300px; /* Ancho fijo del menú */
+  height: 600px; /* Alto máximo del menú */
+  background-color: #FFF; /* Color de fondo */
+  border: 1px solid #ccc; /* Borde del menú */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del menú */
+  display: none; /* Ocultar por defecto */
+  z-index: 10; /* Asegurarse de que esté por encima */
+  overflow-y: auto; /* Permitir desplazamiento si el contenido es demasiado */
+  padding: 20px; /* Espaciado interno */
+}
+
+.accessibility-menu ul {
+  list-style: none; /* Sin viñetas */
+  padding: 0; /* Sin padding */
+}
+
+.accessibility-menu li {
+  padding: 15px 10px; /* Espaciado de las opciones */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre las opciones */
+}
+
+.accessibility-menu li:hover {
+  background-color: #f0f0f0; /* Color al pasar el mouse */
+}
+
+.menu-title {
+  text-align: center; /* Centrar el texto */
+  margin-bottom: 15px; /* Espacio debajo del título */
+  font-size: 20px; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  color: #333; /* Color del texto */
+}
+
+
+.subsection {
+  background-color: #f9f9f9; /* Color de fondo del recuadro */
+  border: 1px solid #ccc; /* Borde del recuadro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  margin-bottom: 10px; /* Espaciado entre subsecciones */
+  display: flex; /* Para alinear el título y el contenido */
+  flex-direction: column;
+}
+
+.subsection span {
+  font-weight: bold; /* Negrita para el título de la subsección */
+  margin-bottom: 5px; /* Espacio debajo del título */
+}
+
+.subsection ul {
+  list-style-type: none; /* Sin viñetas */
+  padding: 0; /* Sin padding */
+}
+
+.subsection li {
+  display: flex; /* Alinear el texto y la imagen */
+  justify-content: space-between; /* Espaciado entre texto e imagen */
+  align-items: center; /* Alinear verticalmente */
+  padding: 5px 0; /* Espaciado entre opciones */
+}
+
+
+.slider-container {
+  display: flex; /* Alinear el texto y el slider */
+  align-items: center; /* Centrar verticalmente */
+}
+
+input[type="range"] {
+  -webkit-appearance: none; /* Ocultar el estilo predeterminado en WebKit */
+  width: 100%; /* Ancho completo */
+  height: 8px; /* Alto del slider */
+  border-radius: 5px; /* Bordes redondeados */
+  background: #ccc; /* Color de fondo */
+  outline: none; /* Sin borde al enfocar */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Ocultar el estilo predeterminado en WebKit */
+  appearance: none; /* Ocultar el estilo predeterminado */
+  width: 20px; /* Ancho del control deslizante */
+  height: 20px; /* Alto del control deslizante */
+  border-radius: 50%; /* Círculo */
+  background: #2196F3; /* Color del control deslizante */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el slider */
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px; /* Ancho del control deslizante */
+  height: 20px; /* Alto del control deslizante */
+  border-radius: 50%; /* Círculo */
+  background: #2196F3; /* Color del control deslizante */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el slider */
+}
