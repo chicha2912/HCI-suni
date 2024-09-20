@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        /* Estilos generales */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1d1e1f;
+        }
+
+        label {
+            color: #1d1e1f;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="email"], input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            border: 2px solid #007bff; /* Borde azul */
+            background-color: white;
+            color: black;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        input[type="email"]::placeholder, input[type="text"]::placeholder, input[type="password"]::placeholder {
+            color: #8c8c8c;
+            font-style: italic;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        /* Estilo de advertencia */
+        .warning {
+            color: red;
+            font-size: 0.9em;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo de los checkbox */
+        .checkbox-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Botón de continuar */
+        button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Crea tu Identidad Secreta</h1>
+        <form action="#" method="post">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" placeholder="Correo*" required>
+
+            <div class="grid">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre*" required>
+                </div>
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido*" required>
+                </div>
+            </div>
+
+            <label for="heroe">Nombre de Heroe</label>
+            <input type="text" id="heroe" name="heroe" placeholder="Ingresar tu nombre de Heroe" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Ingresar tu Contraseña" required>
+
+            <p class="warning">Mínimo 9999 caracteres</p>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" required>
+                    Acepto los términos y condiciones
+                </label>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox">
+                    Acepto recibir notificaciones
+                </label>
+            </div>
+
+            <button type="submit">Continuar</button>
+        </form>
+    </div>
+</body>
+</html>
