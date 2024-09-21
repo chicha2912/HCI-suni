@@ -290,3 +290,48 @@ body {
 .color-selector{
   height: 20px;
 }
+
+
+/* Ajuste de alineación y espaciado de las pestañas en la barra de perfil */
+.profile-tabs {
+  display: flex;
+  justify-content: space-between; /* Espacio distribuido entre los elementos */
+  width: 100%; /* Asegurar que las pestañas ocupen todo el ancho disponible */
+  padding: 10px 0;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.profile-tabs span {
+  flex: 1; /* Cada opción ocupará el mismo espacio */
+  text-align: center; /* Alinear el texto al centro de cada opción */
+  margin: 0 10px;
+}
+
+
+/* Ajuste de interlineado solo para los títulos */
+.profile-section h1, 
+.favorites-section h2 {
+  line-height: normal; /* Mantener un interlineado estándar */
+  margin-bottom: 15px; /* Añadir espaciado adecuado entre los títulos y el contenido */
+}
+
+
+/* Estilo para el "Ver todos" en la sección de favoritos */
+.favorites-section h2 {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+/* Estilo para el "Ver todos" sin el color de enlace predeterminado */
+.view-all {
+font-size: 0.9em;
+color: inherit; /* Mantiene el color del texto predeterminado */
+text-decoration: none; /* Quitar subrayado */
+cursor: pointer;
+}
+
+.view-all:hover {
+text-decoration: underline; /* Solo se subraya cuando el cursor está sobre él */
+}
