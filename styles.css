@@ -13,20 +13,20 @@ body {
   overflow: hidden; /* Evita que el cuerpo de la página haga scroll */
 }
 
-.iphone {
+#iphone {
   width: 375px; /* Ancho típico de iPhone */
   height: 812px; /* Alto típico de iPhone */
   background-color: #FFF;
-  border-radius: 40px;
+  border-radius: 30px;
   position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   border: #000;
   overflow-y: auto; /* Habilitar scroll vertical cuando el contenido exceda la altura */
-  overflow-x: hidden; /* Desactiva el scroll horizontal */
+  overflow-x: auto; /* Desactiva el scroll horizontal */
 }
 
 /* Encabezado */
-.header {
+.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,13 +35,25 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-.header .icons img {
-  width: 24px; /* Ajusta el tamaño de los íconos */
-  height: 24px; /* Mantén un tamaño fijo */
-  margin-left: 10px; /* Añade espacio entre los íconos */
+.top a {
+  margin: 0px 5px; /* Añade espacio entre los íconos */
+  text-decoration: none;
 }
 
-.header .logo img {
+.top .icons {
+  display: flex;
+}
+
+.top .logo {
+  display: flex;
+}
+
+.top .icons img {
+  width: 24px; /* Ajusta el tamaño de los íconos */
+  height: 24px; /* Mantén un tamaño fijo */
+}
+
+.top .logo img {
   width: 40px; /* Ajusta el tamaño del logo */
   height: auto; /* Mantiene la proporción del logo */
 }
@@ -163,12 +175,13 @@ body {
   margin-top: 5px;
 }
 
+
 /* Accesibilidad */
 
 .accessibility-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  position: fixed;
+  transform: translate(-60px, 738px);
+  transform: translate(-70px, 340px);
   background-color: #007AFF;
   color: #FFF;
   border-radius: 50%;
@@ -188,9 +201,9 @@ body {
 }
 
 .accessibility-menu {
-  position: absolute; /* Posicionamiento absoluto dentro del contenedor .iphone */
-  bottom: 80px; /* Espaciado desde la parte inferior */
-  right: 20px; /* Espaciado desde la derecha */
+  position: fixed; /* Posicionamiento absoluto dentro del contenedor .iphone */
+  transform: translate(-310px, 128px);
+  transform: translate(-320px, -270px);
   width: 300px; /* Ancho fijo del menú */
   height: 600px; /* Alto máximo del menú */
   background-color: #FFF; /* Color de fondo */
@@ -199,8 +212,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del menú */
   display: none; /* Ocultar por defecto */
   z-index: 10; /* Asegurarse de que esté por encima */
-  overflow-y: auto; /* Permitir desplazamiento si el contenido es demasiado */
   padding: 20px; /* Espaciado interno */
+  overflow-y: auto;
 }
 
 .accessibility-menu ul {
@@ -210,7 +223,7 @@ body {
 
 .accessibility-menu li {
   padding: 15px 10px; /* Espaciado de las opciones */
-  cursor: pointer; /* Cambiar el cursor al pasar sobre las opciones */
+  cursor: default; /* Cambiar el cursor al pasar sobre las opciones */
 }
 
 .accessibility-menu li:hover {
@@ -252,34 +265,28 @@ body {
   padding: 5px 0; /* Espaciado entre opciones */
 }
 
-.slider-container {
-  display: flex; /* Alinear el texto y el slider */
-  align-items: center; /* Centrar verticalmente */
+.control-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-input[type="range"] {
-  -webkit-appearance: none; /* Ocultar el estilo predeterminado en WebKit */
-  width: 100%; /* Ancho completo */
-  height: 8px; /* Alto del slider */
-  border-radius: 5px; /* Bordes redondeados */
-  background: #ccc; /* Color de fondo */
-  outline: none; /* Sin borde al enfocar */
+.control-container div {
+  width: 38px;
+  text-align: center;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Ocultar el estilo predeterminado en WebKit */
-  appearance: none; /* Ocultar el estilo predeterminado */
-  width: 20px; /* Ancho del control deslizante */
-  height: 20px; /* Alto del control deslizante */
-  border-radius: 50%; /* Círculo */
-  background: #2196F3; /* Color del control deslizante */
-  cursor: pointer; /* Cambiar el cursor al pasar sobre el slider */
+.control-container button {
+  width: 15px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
 
-input[type="range"]::-moz-range-thumb {
-  width: 20px; /* Ancho del control deslizante */
-  height: 20px; /* Alto del control deslizante */
-  border-radius: 50%; /* Círculo */
-  background: #2196F3; /* Color del control deslizante */
-  cursor: pointer; /* Cambiar el cursor al pasar sobre el slider */
+.color-selector{
+  height: 20px;
 }
