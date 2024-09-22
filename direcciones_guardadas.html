@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="iphone">
+        <div id="iphone-content">
+            <div class="top">
+                <header class="logo">
+                    <a href="index.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                </header>
+                <nav class="icons">
+                    <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
+                    <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a><img src="./public/icons/bars.png" alt="Menú"></a>
+                </nav>
+            </div>
+
+            <main class="main-content">
+                <section class="profile-section">
+                  <div class="profile-header">
+                    <h1>Direcciones guardadas</h1>
+                  </div>
+                  
+                </section>
+
+                <a href="anadir_direccion.html"><button type="submit">Añadir direccion</button></a>
+
+                <form action="editar_direccion.html" method="get">
+                  <label for="direccion 1">Direccion 1</label>
+                  <div class="input-group">
+                      <input type="text" id="direccion 1" name="direccion 1" placeholder="Calle el Palmar 155" disabled>
+                      <button class="edit-btn">Editar</button>
+                      <button class="delete-btn">Eliminar</button>
+                  </div>
+              
+                  <label for="direccion 2">Direccion 2</label>
+                  <div class="input-group">
+                      <input type="text" id="direccion 2" name="direccion 2" placeholder="Las Retamas 502" disabled>
+                      <button class="edit-btn">Editar</button>
+                      <button class="delete-btn">Eliminar</button>
+                  </div>
+
+                  <label for="direccion 3">Direccion 3</label>
+                  <div class="input-group">
+                      <input type="text" id="direccion 3" name="direccion 3" placeholder="Jr. El Salvador 701" disabled>
+                      <button class="edit-btn">Editar</button>
+                      <button class="delete-btn">Eliminar</button>
+                  </div>
+              
+                  <label for="direccion 4">Direccion 4</label>
+                  <div class="input-group">
+                      <input type="text" id="direccion 4" name="direccion 4" placeholder="Av. Los Quechuas" disabled>
+                      <button class="edit-btn">Editar</button>
+                      <button class="delete-btn">Eliminar</button>
+                  </div>
+              </form>
+              
+            </main>
+        </div>
+    </div>
+    <script src="accesibility.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="iphone">
+        <div id="iphone-content">
+            <div class="top">
+                <header class="logo">
+                    <a href="index.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                </header>
+                <nav class="icons">
+                    <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
+                    <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a><img src="./public/icons/bars.png" alt="Menú"></a>
+                </nav>
+            </div>
+
+            <main class="main-content">
+                <section class="profile-section">
+                  <div class="profile-header">
+                    <h1>Editar direccion</h1>
+                  </div>
+                  
+                </section>
+
+                <form action="direcciones_guardadas.html" method="get">
+                  <label for="departamento">Departamento</label>
+                  <input type="text" id="departamento" name="departamento" placeholder="Eustaquio">
+
+                  <label for="provincia">Provincia</label>
+                  <input type="text" id="provincia" name="provincia" placeholder="De La Torre">
+
+                  <label for="distrito">Distrito</label>
+                  <input type="text" id="distrito" name="distrito" placeholder="Invalido@gmail.com">
+      
+                  <label for="direccion">Direccion</label>
+                  <input type="text" id="direccion" name="direccion" value="43225363458">
+      
+                  <button type="submit">Guardar</button>
+              </form>
+              
+            </main>
+        </div>
+    </div>
+    <script src="accesibility.js"></script>
+</body>
+</html>

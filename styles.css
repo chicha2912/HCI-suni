@@ -380,3 +380,47 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+/* Estilo para los botones de Editar y Eliminar */
+.edit-btn {
+  background-color: white;
+  border: 2px solid blue;
+  color: blue;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.edit-btn:hover {
+  background-color: #e6f0ff; /* Ligero cambio de color al pasar el cursor */
+}
+
+.delete-btn {
+  background-color: white;
+  border: 2px solid red;
+  color: red;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #ffe6e6; /* Ligero cambio de color al pasar el cursor */
+}
+
+/* Alineación de los botones con los inputs */
+.input-group {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: flex-start; /* Alinea los botones a la izquierda del input */
+  margin-bottom: 20px; /* Espacio entre cada grupo de input y botones */
+}
+
+.input-group button {
+  margin-top: 10px; /* Añade un espacio entre el input y los botones */
+  width: auto; /* Para que los botones no ocupen el 100% del ancho */
+}
+
+.input-group input {
+  flex-grow: 1;
+}
