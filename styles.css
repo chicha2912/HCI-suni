@@ -411,15 +411,20 @@ button:hover {
 /* Alineación de los botones con los inputs */
 .input-group {
   display: flex;
-  flex-direction: column; /* Coloca los elementos en una columna */
-  align-items: flex-start; /* Alinea los botones a la izquierda del input */
-  margin-bottom: 20px; /* Espacio entre cada grupo de input y botones */
+  flex-direction: column; /* Mantiene el input y los botones en columnas */
+  margin-bottom: 20px; /* Espacio entre cada grupo */
 }
 
-.input-group button {
-  margin-top: 10px; /* Añade un espacio entre el input y los botones */
+.button-group {
+  display: flex;
+  justify-content: flex-start; /* Alinea los botones a la izquierda */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.button-group button {
   width: auto; /* Para que los botones no ocupen el 100% del ancho */
 }
+
 
 .input-group input {
   flex-grow: 1;
