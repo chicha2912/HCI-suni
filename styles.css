@@ -335,3 +335,48 @@ cursor: pointer;
 .view-all:hover {
 text-decoration: underline; /* Solo se subraya cuando el cursor está sobre él */
 }
+
+
+input[type="email"], input[type="password"], input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: white; /* Fondo blanco */
+  border: 2px solid black; /* Borde negro */
+  color: black; /* Texto negro */
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+input[type="email"]::placeholder, input[type="password"]::placeholder, input[type="text"]::placeholder {
+  color: #8C8C8C; /* Placeholder en gris claro */
+  font-style: italic;
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
+  border: 2px solid #007BFF; /* Borde azul al enfocar */
+  outline: none;
+}
+
+label {
+  color: #8C8C8C; /* Color gris claro */
+  font-size: 1em;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
