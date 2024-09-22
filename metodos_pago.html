@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="iphone">
+        <div id="iphone-content">
+            <div class="top">
+                <header class="logo">
+                    <a href="index.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                </header>
+                <nav class="icons">
+                    <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
+                    <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a><img src="./public/icons/bars.png" alt="Menú"></a>
+                </nav>
+            </div>
+
+            <main class="main-content">
+                <section class="profile-section">
+                  <div class="profile-header">
+                    <h1>Metodos de pago</h1>
+                  </div>
+                  
+                </section>
+
+                <a href="anadir_metodos_pago.html"><button type="submit">Añadir metodo de pago</button></a>
+
+                <form action="editar_metodos_pago.html" method="get">
+                  <label for="tarjeta 1">Tarjeta 1</label>
+                  <div class="input-group">
+                      <input type="text" id="tarjeta 1" name="tarjeta 1" placeholder="**********97" disabled>
+                      <div class="button-group">
+                        <button class="edit-btn">Editar</button>
+                        <button class="delete-btn">Eliminar</button>
+                    </div>
+                  </div>
+              
+                  <label for="tarjeta 2">Tarjeta 2</label>
+                  <div class="input-group">
+                      <input type="text" id="tarjeta 2" name="tarjeta 2" placeholder="**********32" disabled>
+                      <div class="button-group">
+                        <button class="edit-btn">Editar</button>
+                        <button class="delete-btn">Eliminar</button>
+                    </div>
+                  </div>
+
+                  <label for="tarjeta 3">tTarjeta 3</label>
+                  <div class="input-group">
+                      <input type="text" id="tarjeta 3" name="tarjeta 3" placeholder="**********26" disabled>
+                      <div class="button-group">
+                        <button class="edit-btn">Editar</button>
+                        <button class="delete-btn">Eliminar</button>
+                    </div>
+                  </div>
+              
+                  <label for="tarjeta 4">Tarjeta 4</label>
+                  <div class="input-group">
+                      <input type="text" id="tarjeta 4" name="tarjeta 4" placeholder="**********03" disabled>
+                      <div class="button-group">
+                        <button class="edit-btn">Editar</button>
+                        <button class="delete-btn">Eliminar</button>
+                    </div>
+                  </div>
+              </form>
+              
+            </main>
+        </div>
+    </div>
+    <script src="accesibility.js"></script>
+</body>
+</html>

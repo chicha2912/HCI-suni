@@ -388,7 +388,6 @@ button:hover {
   color: blue;
   padding: 5px 10px;
   cursor: pointer;
-  margin-left: 10px;
 }
 
 .edit-btn:hover {
@@ -417,7 +416,7 @@ button:hover {
 
 .button-group {
   display: flex;
-  justify-content: flex-start; /* Alinea los botones a la izquierda */
+  justify-content: space-between; /* Alinea los botones a la izquierda */
   gap: 10px; /* Espacio entre los botones */
 }
 
