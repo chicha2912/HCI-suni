@@ -568,4 +568,73 @@ section {
 .footer img {
   width: 24px;
   height: auto;
+
+/* Menú desplegable */
+.menu-desplegable {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: rotateY(90deg); /* Inicialmente oculto con rotación */
+  transform-origin: right;
+  transition: transform 0.4s ease;
+  z-index: 9999;
+}
+
+.menu-desplegable.active {
+  transform: rotateY(0deg); /* Mostramos el menú con rotación 0 */
+}
+
+.menu-desplegable .menu-header {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-desplegable .menu-close {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+.menu-desplegable .menu-list {
+  list-style: none;
+  padding: 20px;
+}
+
+.menu-desplegable .menu-list li {
+  margin-bottom: 20px;
+}
+
+.menu-desplegable .menu-list li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.menu-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.menu-buttons .btn-registro, .menu-buttons .btn-login {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-buttons .btn-registro {
+  background-color: white;
+  border: 1px solid blue;
+  color: blue;
+}
+
+.menu-buttons .btn-login {
+  background-color: blue;
+  color: white;
 }

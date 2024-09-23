@@ -16,11 +16,29 @@
                 <nav class="icons">
                     <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
                     <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
-                    <a href="carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
-                    <a><img src="./public/icons/bars.png" alt="Menú"></a>
+                    <a><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
                 </nav>
             </div>
-
+            <div id="menu-desplegable" class="menu-desplegable">
+                <div class="menu-header">
+                    <span class="menu-close" onclick="cerrarMenu()">✖</span>
+                </div>
+                <ul class="menu-list">
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="carrito.html">Carrito de compras</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
+                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
+                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                </ul>
+                <div class="menu-buttons">
+                    <button class="btn-registro">Registrarse</button>
+                    <button class="btn-login">Iniciar sesión</button>
+                </div>
+            </div>
             <main class="main-content">
                 <section class="profile-section">
                   <div class="profile-header">
@@ -49,5 +67,6 @@
         </div>
     </div>
     <script src="accesibility.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>
