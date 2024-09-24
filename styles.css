@@ -246,7 +246,7 @@ body {
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del menú */
   display: none; /* Ocultar por defecto */
-  z-index: 10; /* Asegurarse de que esté por encima */
+  z-principal: 10; /* Asegurarse de que esté por encima */
   padding: 20px; /* Espaciado interno */
   overflow-y: auto;
 }
@@ -581,7 +581,7 @@ section {
   transform: rotateY(90deg); /* Inicialmente oculto con rotación */
   transform-origin: right;
   transition: transform 0.4s ease;
-  z-index: 9999;
+  z-principal: 9999;
 }
 
 .menu-desplegable.active {
