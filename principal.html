@@ -3,8 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tienda de Superhéroes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #iphone {
+            width: 375px;
+            height: 812px;
+            background-color: #FFF;
+            border-radius: 30px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .top a {
+            margin: 0px 5px;
+            text-decoration: none;
+        }
+
+        .top .icons {
+            display: flex;
+        }
+
+        .top .logo img {
+            width: 40px;
+            height: auto;
+        }
+
+        .top .icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .main-content {
+            padding: 0;
+        }
+
+        .product-highlight img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .highlight-text {
+            padding: 0 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .highlight-text h2 {
+            margin-bottom: 10px;
+        }
+
+        .highlight-text p {
+            margin-bottom: 20px;
+        }
+
+        .recommended, .essentials {
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        .recommended .item, .essentials .item {
+            margin-bottom: 15px;
+        }
+
+        .recommended .item img, .essentials .item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .recommended .item h3, .essentials .item p {
+            margin-bottom: 10px;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .essential-items {
+            display: flex;
+            justify-content: space-between; 
+            gap: 10px;
+        }
+
+        .essential-items .item {
+            width: 48%;
+            text-align: center;
+        }
+
+        .essential-items .item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer .help-links, .footer .social-media, .footer .legal {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer img {
+            width: 24px;
+            height: auto;
+        }
+        /* Menú desplegable */
+.menu-desplegable {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: rotateY(90deg); /* Inicialmente oculto con rotación */
+    transform-origin: right;
+    transition: transform 0.4s ease;
+    z-principal: 9999;
+  }
+  
+  .menu-desplegable.active {
+    transform: rotateY(0deg); /* Mostramos el menú con rotación 0 */
+  }
+  
+  .menu-desplegable .menu-header {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .menu-desplegable .menu-close {
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .menu-desplegable .menu-list {
+    list-style: none;
+    padding: 20px;
+  }
+  
+  .menu-desplegable .menu-list li {
+    margin-bottom: 20px;
+  }
+  
+  .menu-desplegable .menu-list li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .menu-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .menu-buttons .btn-registro, .menu-buttons .btn-login {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu-buttons .btn-registro {
+    background-color: white;
+    border: 1px solid blue;
+    color: blue;
+  }
+  
+  .menu-buttons .btn-login {
+    background-color: blue;
+    color: white;
+  }
+    </style>
 </head>
 <body>
     <div id="iphone">
@@ -14,53 +228,72 @@
                     <a href="principal.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
                 </header>
                 <nav class="icons">
-                    <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
-                    <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
-                    <a><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
-                    <a><img src="./public/icons/bars.png" alt="Menú"></a>
+                    <a href="search.html"><img src="./public/icons/search.png" alt="Búsqueda"></a>
+                    <a href="perfil.html"><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
                 </nav>
             </div>
 
+            <div id="menu-desplegable" class="menu-desplegable">
+                <div class="menu-header">
+                    <span class="menu-close" onclick="cerrarMenu()">✖</span>
+                </div>
+                <ul class="menu-list">
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="carrito.html">Carrito de compras</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
+                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
+                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                </ul>
+                <div class="menu-buttons">
+                    <button class="btn-registro">Registrarse</button>
+                    <button class="btn-login">Iniciar sesión</button>
+                </div>
+            </div>
+
             <main class="main-content">
-                <!-- Imagen del producto principal -->
                 <section class="product-highlight">
                     <img src="./public/images/product1.png" alt="SUPE-278" class="main-image">
+                </section>
+                
+                <section class="highlight-text">
                     <h2>Nueva adquisición: SUPE-278</h2>
                     <p>Protección de última y mejora en la electrificación</p>
                 </section>
 
-                <!-- Productos recomendados -->
                 <section class="recommended">
                     <div class="item">
-                        <img src="./public/images/product2.png" alt="Capa de electricidad">
+                        <img src="./public/images/product2.png" alt="Capa de Electricidad">
                         <h3>Capa de Electricidad</h3>
                         <a href="#" class="buy-button">Compra ahora</a>
                     </div>
 
                     <div class="item">
-                        <img src="./public/images/product3.1.jpg" alt="Fuerza cósmica">
+                        <img src="./public/images/product3.1.jpg" alt="Fuerza Cósmica">
                         <h3>Fuerza Cósmica</h3>
                         <a href="#" class="buy-button">Compra ahora</a>
                     </div>
                 </section>
-
-                <!-- Productos esenciales -->
+                
                 <section class="essentials">
                     <h3>ESENCIALES</h3>
                     <div class="essential-items">
                         <div class="item">
-                            <img src="./public/images/product3.jpg" alt="Controlador del tiempo">
-                            <p>Controlador del tiempo</p>
+                            <img src="./public/images/product3.jpg" alt="Guardabrazos del tiempo">
+                            <p>Guardabrazos del tiempo</p>
                         </div>
 
                         <div class="item">
-                            <img src="./public/images/product4.png" alt="Lente de visión nocturna">
-                            <p>Lente visión nocturna</p>
+                            <img src="./public/images/product4.png" alt="Lentes visión nocturna">
+                            <p>Lentes visión nocturna</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Secciones de ayuda y redes sociales -->
                 <footer class="footer">
                     <div class="help-links">
                         <a href="#">Hazte miembro</a>
@@ -84,6 +317,7 @@
             </main>
         </div>
     </div>
-    <script src="accesibility.js"></script>
+    
+    <script src="menu.js"></script>
 </body>
 </html>
