@@ -30,9 +30,9 @@ accessibility.innerHTML = `
                 <li>
                     <div>Zoom</div>
                     <div class="control-container" id="zoom-control">
-                        <button class="control-decrease">-</button>
+                        <button class="control-decrease accessibility-buttons">-</button>
                         <div class="control-value">100%</div>
-                        <button class="control-increase">+</button>
+                        <button class="control-increase accessibility-buttons">+</button>
                     </div>
                 </li>
                 <li>
@@ -48,17 +48,17 @@ accessibility.innerHTML = `
                 <li>
                     <div>Tamaño de fuente</div>
                     <div class="control-container" id="tamano-control">
-                        <button class="control-decrease">-</button>
+                        <button class="control-decrease accessibility-buttons">-</button>
                         <div class="control-value">12</div>
-                        <button class="control-increase">+</button>
+                        <button class="control-increase accessibility-buttons">+</button>
                     </div>                        
                 </li>
                 <li>
                     <div>Brillo</div>
                     <div class="control-container" id="brillo-control">
-                        <button class="control-decrease">-</button>
+                        <button class="control-decrease accessibility-buttons">-</button>
                         <div class="control-value">100%</div>
-                        <button class="control-increase">+</button>
+                        <button class="control-increase accessibility-buttons">+</button>
                     </div>
                 </li>
                 <li>
@@ -81,12 +81,12 @@ accessibility.innerHTML = `
                 <li>
                     <div>Color de fuente</div>
                     <input type="color" class="color-selector" id="font-color-selector">
-                    <button id="font-color-cancel">Cancelar</button>
+                    <button id="font-color-cancel" class="accessibility-buttons">Cancelar</button>
                 </li>
                 <li>
                     <div>Color de fondo</div>
                     <input type="color" class="color-selector" value="#ffffff" id="background-color-selector">
-                    <button id="background-color-cancel">Cancelar</button>
+                    <button id="background-color-cancel" class="accessibility-buttons">Cancelar</button>
                 </li>
                 <li>
                     <div>Contraste</div>
@@ -121,9 +121,9 @@ accessibility.innerHTML = `
                 <li>
                     <div>Volumen</div>
                     <div class="control-container" id="volumen-control">
-                        <button class="control-decrease">-</button>
+                        <button class="control-decrease accessibility-buttons">-</button>
                         <div class="control-value">100%</div>
-                        <button class="control-increase">+</button>
+                        <button class="control-increase accessibility-buttons">+</button>
                     </div>
                 </li>
                 <li>
