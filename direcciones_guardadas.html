@@ -5,18 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        .edit-btn, .delete-btn {
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 2px solid;
+            background-color: white;
+            cursor: pointer;
+        }
+        .edit-btn {
+            color: blue;
+            border-color: blue;
+        }
+        .delete-btn {
+            color: red;
+            border-color: red;
+        }
+
+        .main-content {
+            margin-top: 20px;
+        }
+        .form-direcciones {
+            margin-top: 20px;
+        }
+
+        .btn-add-direccion {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px; 
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .modal-header img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn-confirmar, .btn-cancelar {
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-confirmar {
+            background-color: red;
+            color: white;
+        }
+
+        .btn-cancelar {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div id="iphone">
         <div id="iphone-content">
             <div class="top">
                 <header class="logo">
-                    <a href="index.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                    <a href="principal.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
                 </header>
                 <nav class="icons">
                     <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
-                    <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
-                    <a><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a href="./perfil.html"><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="./carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
                     <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
                 </nav>
             </div>
@@ -44,52 +132,80 @@
                   <div class="profile-header">
                     <h1>Direcciones guardadas</h1>
                   </div>
-                  
                 </section>
 
-                <a href="anadir_direccion.html"><button type="submit">Añadir direccion</button></a>
+                <a href="anadir_direccion.html"><button type="submit" class="btn-add-direccion">Añadir dirección</button></a>
 
-                <form action="editar_direccion.html" method="get">
-                  <label for="direccion 1">Direccion 1</label>
+                <form class="form-direcciones" action="editar_direccion.html" method="get">
+                  <label for="direccion 1">Dirección 1</label>
                   <div class="input-group">
                       <input type="text" id="direccion 1" name="direccion 1" placeholder="Calle el Palmar 155" disabled>
                       <div class="button-group">
-                        <button class="edit-btn">Editar</button>
-                        <button class="delete-btn">Eliminar</button>
-                    </div>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        <button class="edit-btn" type="submit">Editar</button>
+                      </div>
                   </div>
               
-                  <label for="direccion 2">Direccion 2</label>
+                  <label for="direccion 2">Dirección 2</label>
                   <div class="input-group">
                       <input type="text" id="direccion 2" name="direccion 2" placeholder="Las Retamas 502" disabled>
                       <div class="button-group">
-                        <button class="edit-btn">Editar</button>
-                        <button class="delete-btn">Eliminar</button>
-                    </div>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        <button class="edit-btn" type="submit">Editar</button>
+                      </div>
                   </div>
 
-                  <label for="direccion 3">Direccion 3</label>
+                  <label for="direccion 3">Dirección 3</label>
                   <div class="input-group">
                       <input type="text" id="direccion 3" name="direccion 3" placeholder="Jr. El Salvador 701" disabled>
                       <div class="button-group">
-                        <button class="edit-btn">Editar</button>
-                        <button class="delete-btn">Eliminar</button>
-                    </div>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        <button class="edit-btn" type="submit">Editar</button>
+                      </div>
                   </div>
               
-                  <label for="direccion 4">Direccion 4</label>
+                  <label for="direccion 4">Dirección 4</label>
                   <div class="input-group">
                       <input type="text" id="direccion 4" name="direccion 4" placeholder="Av. Los Quechuas" disabled>
                       <div class="button-group">
-                        <button class="edit-btn">Editar</button>
-                        <button class="delete-btn">Eliminar</button>
-                    </div>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        <button class="edit-btn" type="submit">Editar</button>
+                      </div>
                   </div>
               </form>
               
             </main>
         </div>
     </div>
+
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Advertencia">
+                <h2>¿Eliminar dirección?</h2>
+            </div>
+            <p>¿Estás seguro de que deseas eliminar esta dirección?</p>
+            <div class="modal-buttons">
+                <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+                <button class="btn-confirmar" onclick="eliminarDireccion()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal() {
+            document.getElementById("modalConfirmacion").style.display = "flex";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modalConfirmacion").style.display = "none";
+        }
+
+        function eliminarDireccion() {
+            cerrarModal();
+        }
+    </script>
+
     <script src="accesibility.js"></script>
     <script src="menu.js"></script>
 </body>

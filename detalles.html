@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del Pedido</title>
+    <title>Plantilla</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilo general */
         .main-content h1 {
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
         }
 
-        /* Secciones de dirección y pago */
         .delivery-details, .payment-details {
             border: 1px solid #000;
             padding: 15px;
-            margin-bottom: 20px;
+            margin: 20px 10px; 
             border-radius: 10px;
             background-color: #f9f9f9;
         }
@@ -53,7 +51,6 @@
             background-color: #0056b3;
         }
 
-        /* Pop-ups corregidos */
         .popup {
             display: none;
             position: fixed;
@@ -96,7 +93,6 @@
             font-size: 1em;
         }
 
-        /* Estilo del checkbox */
         .checkbox-container {
             display: flex;
             align-items: center;
@@ -109,7 +105,6 @@
             margin-right: 10px;
         }
 
-        /* Pop-up compra exitosa */
         .popup-success {
             display: none;
             position: fixed;
@@ -144,61 +139,68 @@
         }
 
         .popup-success .check-icon:before {
-            content: '\2713'; /* Símbolo de check */
+            content: '\2713';
             font-size: 5em;
             color: white;
-        }
-
-        /* Fondo oscuro detrás del pop-up */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
         }
     </style>
 </head>
 <body>
     <div id="iphone">
-        <header class="header">
-            <div class="logo">
-                <img src="./public/icons/shield.png" alt="Logo" onclick="window.location.href='main.html'">
+        <div id="iphone-content">
+        <div class="top">
+            <header class="logo">
+                <a href="principal.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+            </header>
+            <nav class="icons">
+                <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
+                <a href="./perfil.html"><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                <a href="./carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
+            </nav>
+        </div>
+        <div id="menu-desplegable" class="menu-desplegable">
+            <div class="menu-header">
+                <span class="menu-close" onclick="cerrarMenu()">✖</span>
             </div>
-            <div class="icons">
-                <img src="./public/icons/search.png" alt="Buscar">
-                <img src="./public/icons/profile-user.png" alt="Perfil">
-                <img src="./public/icons/shopping-bag.png" alt="Carrito">
-                <img src="./public/icons/bars.png" alt="Menú">
+            <ul class="menu-list">
+                <li><a href="novedades.html">Novedades</a></li>
+                <li><a href="carrito.html">Carrito de compras</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
+                <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
+                <li><a href="metodos_pago.html">Métodos de pago</a></li>
+            </ul>
+            <div class="menu-buttons">
+                <button class="btn-registro">Registrarse</button>
+                <button class="btn-login">Iniciar sesión</button>
             </div>
-        </header>
+        </div>
+            <main class="main-content">
+                <h1>Detalles del pedido</h1>
 
-        <main class="main-content">
-            <h1>Detalles del pedido</h1>
+                <section class="delivery-details">
+                    <h2>Dirección de Entrega</h2>
+                    <input type="text" value="Dirección 1" disabled>
+                    <input type="text" value="Dirección 2" disabled>
+                    <button class="button-small" onclick="openPopup('address-popup')">Agregar Nueva Dirección</button>
+                </section>
 
-            <section class="delivery-details">
-                <h2>Dirección de Entrega</h2>
-                <input type="text" value="Dirección 1" disabled>
-                <input type="text" value="Dirección 2" disabled>
-                <button class="button-small" onclick="openPopup('address-popup')">Agregar Nueva Dirección</button>
-            </section>
+                <section class="payment-details">
+                    <h2>Opciones de Pago</h2>
+                    <input type="text" value="Yape" disabled>
+                    <input type="text" value="Plin" disabled>
+                    <input type="text" value="Tarjeta 1" disabled>
+                    <button class="button-small" onclick="openPopup('card-popup')">Agregar Nueva Tarjeta</button>
+                </section>
 
-            <section class="payment-details">
-                <h2>Opciones de Pago</h2>
-                <input type="text" value="Yape" disabled>
-                <input type="text" value="Plin" disabled>
-                <input type="text" value="Tarjeta 1" disabled>
-                <button class="button-small" onclick="openPopup('card-popup')">Agregar Nueva Tarjeta</button>
-            </section>
-
-            <button class="checkout" onclick="showSuccessPopup()">Compra Ya !!!!!</button>
-        </main>
+                <button class="checkout" onclick="showSuccessPopup()">Compra Ya !!!!!</button>
+            </main>
+        </div>
     </div>
 
-    <!-- Pop-up para agregar nueva dirección -->
     <div class="popup" id="address-popup">
         <h2>Nueva Dirección</h2>
         <select>
@@ -217,7 +219,6 @@
         </div>
     </div>
 
-    <!-- Pop-up para agregar nueva tarjeta -->
     <div class="popup" id="card-popup">
         <h2>Tarjeta de Crédito/Débito</h2>
         <input type="text" placeholder="Número de tarjeta" required>
@@ -235,30 +236,25 @@
         </div>
     </div>
 
-    <!-- Pop-up de Compra Exitosa -->
     <div class="popup-success" id="success-popup">
         <h2>Compra Exitosa !!!!</h2>
         <div class="check-icon"></div>
     </div>
 
-    <!-- Fondo oscuro para los pop-ups -->
-    <div class="overlay" id="overlay"></div>
-
     <script>
         function openPopup(popupId) {
             document.getElementById(popupId).style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
         }
 
         function closePopup(popupId) {
             document.getElementById(popupId).style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
         }
 
         function showSuccessPopup() {
             document.getElementById('success-popup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
         }
     </script>
+    <script src="accesibility.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>

@@ -3,23 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
+    <title>Carrito</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .main-content h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .product-detail, .order-summary {
+            border: 1px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .product-detail img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .product-info h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-info select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cart-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-info p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .order-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .order-summary .row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1em;
+        }
+
+        .order-summary h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .order-summary .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .continue {
+            background-color: white;
+            color: blue;
+            border: 1px solid blue;
+        }
+
+        .checkout {
+            background-color: blue;
+            color: white;
+        }
+
+        .continue:hover {
+            background-color: #f0f0f0;
+        }
+
+        .checkout:hover {
+            background-color: #0056b3;
+        }
+
+        .related-products {
+            margin-top: 30px;
+        }
+
+        .related-products h2 {
+            text-align: left;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .products-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .product-description {
+            text-align: center;
+            font-size: 1em;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
     <div id="iphone">
         <div id="iphone-content">
             <div class="top">
                 <header class="logo">
-                    <a href="index.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                    <a href="principal.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
                 </header>
                 <nav class="icons">
                     <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
-                    <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
-                    <a><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a href="./perfil.html"><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="./carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
                     <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
                 </nav>
             </div>
+
             <div id="menu-desplegable" class="menu-desplegable">
                 <div class="menu-header">
                     <span class="menu-close" onclick="cerrarMenu()">✖</span>
@@ -39,61 +168,78 @@
                     <button class="btn-login">Iniciar sesión</button>
                 </div>
             </div>
+
             <main class="main-content">
-            <section class="cart">
-                <h1>Carrito</h1>
-                <p>1 producto | $ 99.99</p>
-
-                <div class="product-detail">
-                    <img src="./public/images/product1.png" alt="Producto">
-                    <div class="product-info">
-                        <h2>SUPE-278</h2>
-                        <p>Talla</p>
-                        <select>
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                        </select>
-                        <p>Cantidad</p>
-                        <select>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
+                <section class="cart">
+                    <h1>Carrito</h1>
+                    <div class="cart-info">
+                        <p>1 producto | $ 99.99</p>
                     </div>
-                </div>
 
-                <div class="order-summary">
-                    <h3>Importe</h3>
-                    <p>Precio sin IGV: $86.19</p>
-                    <p>Envío: $11.00</p>
-                    <p>IGV (18%): $13.79</p>
-                    <h3>Total de la orden: $99.99</h3>
-                </div>
-
-                <div class="buttons">
-                    <button class="continue" onclick="window.location.href='main.html'">Seguir Comprando</button> <!-- Redirección a la página principal -->
-                    <button class="checkout" onclick="window.location.href='detalles.html'">Compra Ahora</button> <!-- Redirección a la página de detalles -->
-                </div>
-            </section>
-
-            <section class="related-products">
-                <h2>Productos Relacionados</h2>
-                <div class="products-container">
-                    <div class="product">
-                        <img src="./public/images/product1.png" alt="Guardabrazos del tiempo">
+                    <div class="product-detail">
+                        <img src="./public/images/product1.png" alt="Producto">
+                        <div class="product-info">
+                            <h2>SUPE-278</h2>
+                            <p>Talla</p>
+                            <select>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                            </select>
+                            <p>Cantidad</p>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="product">
-                        <img src="./public/images/product2.png" alt="Lentes visión nocturna">
+
+                    <div class="order-summary">
+                        <h3>Importe</h3>
+                        <div class="row">
+                            <p>Precio sin IGV:</p>
+                            <p>$86.19</p>
+                        </div>
+                        <div class="row">
+                            <p>Envío:</p>
+                            <p>$11.00</p>
+                        </div>
+                        <div class="row">
+                            <p>IGV (18%):</p>
+                            <p>$13.79</p>
+                        </div>
+                        <div class="row total">
+                            <p>Total de la orden:</p>
+                            <p>$99.99</p>
+                        </div>
                     </div>
-                </div>
-                <div class="products-container">
-                    <div class="product-description">Guardabrazos del tiempo</div>
-                    <div class="product-description">Lentes visión nocturna</div>
-                </div>
-            </section>
-        </main>
+
+                    <div class="buttons">
+                        <button class="continue" onclick="window.location.href='principal.html'">Seguir Comprando</button>
+                        <button class="checkout" onclick="window.location.href='detalles.html'">Compra Ahora</button>
+                    </div>
+                </section>
+
+                <section class="related-products">
+                    <h2>Productos Relacionados</h2>
+                    <div class="products-container">
+                        <div class="product">
+                            <img src="./public/images/product1.png" alt="Guardabrazos del tiempo">
+                        </div>
+                        <div class="product">
+                            <img src="./public/images/product2.png" alt="Lentes visión nocturna">
+                        </div>
+                    </div>
+                    <div class="products-container">
+                        <div class="product-description">Guardabrazos del tiempo</div>
+                        <div class="product-description">Lentes visión nocturna</div>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
+
     <script src="accesibility.js"></script>
     <script src="menu.js"></script>
 </body>

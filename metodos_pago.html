@@ -5,18 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para los botones */
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        .edit-btn, .delete-btn {
+            padding: 5px 15px;
+            border-radius: 20px; /* Bordes redondeados */
+            border: 2px solid;
+            background-color: white;
+            cursor: pointer;
+        }
+        .edit-btn {
+            color: blue;
+            border-color: blue;
+        }
+        .delete-btn {
+            color: red;
+            border-color: red;
+        }
+
+        /* Espaciado entre el botón "Añadir método de pago" y la primera tarjeta */
+        .main-content {
+            margin-top: 20px;
+        }
+        .form-tarjetas {
+            margin-top: 20px; /* Espacio adicional para la primera tarjeta */
+        }
+
+        /* Espaciado del botón añadir */
+        .btn-add-tarjeta {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px; /* Botón redondeado */
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilos del pop-up (modal) */
+        .modal {
+            display: none; /* Escondido por defecto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .modal-header img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn-confirmar, .btn-cancelar {
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-confirmar {
+            background-color: red;
+            color: white;
+        }
+
+        .btn-cancelar {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div id="iphone">
         <div id="iphone-content">
             <div class="top">
                 <header class="logo">
-                    <a href="index.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                    <a href="principal.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
                 </header>
                 <nav class="icons">
                     <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
-                    <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
-                    <a><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a href="./perfil.html"><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="./carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
                     <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
                 </nav>
             </div>
@@ -42,54 +134,82 @@
             <main class="main-content">
                 <section class="profile-section">
                   <div class="profile-header">
-                    <h1>Metodos de pago</h1>
+                    <h1>Métodos de pago</h1>
                   </div>
-                  
                 </section>
 
-                <a href="anadir_metodos_pago.html"><button type="submit">Añadir metodo de pago</button></a>
+                <a href="anadir_metodos_pago.html"><button type="submit" class="btn-add-tarjeta">Añadir método de pago</button></a>
 
-                <form action="editar_metodos_pago.html" method="get">
+                <form class="form-tarjetas" action="editar_metodos_pago.html" method="get">
                   <label for="tarjeta 1">Tarjeta 1</label>
                   <div class="input-group">
                       <input type="text" id="tarjeta 1" name="tarjeta 1" placeholder="**********97" disabled>
                       <div class="button-group">
-                        <button class="edit-btn">Editar</button>
-                        <button class="delete-btn">Eliminar</button>
-                    </div>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        <button class="edit-btn" type="submit">Editar</button>
+                      </div>
                   </div>
               
                   <label for="tarjeta 2">Tarjeta 2</label>
                   <div class="input-group">
                       <input type="text" id="tarjeta 2" name="tarjeta 2" placeholder="**********32" disabled>
                       <div class="button-group">
-                        <button class="edit-btn">Editar</button>
-                        <button class="delete-btn">Eliminar</button>
-                    </div>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        <button class="edit-btn" type="submit">Editar</button>
+                      </div>
                   </div>
 
-                  <label for="tarjeta 3">tTarjeta 3</label>
+                  <label for="tarjeta 3">Tarjeta 3</label>
                   <div class="input-group">
                       <input type="text" id="tarjeta 3" name="tarjeta 3" placeholder="**********26" disabled>
                       <div class="button-group">
-                        <button class="edit-btn">Editar</button>
-                        <button class="delete-btn">Eliminar</button>
-                    </div>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        <button class="edit-btn" type="submit">Editar</button>
+                      </div>
                   </div>
               
                   <label for="tarjeta 4">Tarjeta 4</label>
                   <div class="input-group">
                       <input type="text" id="tarjeta 4" name="tarjeta 4" placeholder="**********03" disabled>
                       <div class="button-group">
-                        <button class="edit-btn">Editar</button>
-                        <button class="delete-btn">Eliminar</button>
-                    </div>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        <button class="edit-btn" type="submit">Editar</button>
+                      </div>
                   </div>
               </form>
               
             </main>
         </div>
     </div>
+
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Advertencia">
+                <h2>¿Eliminar método de pago?</h2>
+            </div>
+            <p>¿Estás seguro de que deseas eliminar este método de pago?</p>
+            <div class="modal-buttons">
+                <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+                <button class="btn-confirmar" onclick="eliminarMetodo()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal() {
+            document.getElementById("modalConfirmacion").style.display = "flex";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modalConfirmacion").style.display = "none";
+        }
+
+        function eliminarMetodo() {
+            cerrarModal();
+        }
+    </script>
+
     <script src="accesibility.js"></script>
     <script src="menu.js"></script>
 </body>
