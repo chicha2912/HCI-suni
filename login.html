@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Superhéroe</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos generales */
         body {
@@ -96,22 +96,32 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>Ingresa tu Cuenta de Superheroe</h1>
-        <form action="./principal.html" method="get">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Invalido@gmail.com" required>
-
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Ingresar Contraseña" required>
-
-            <div class="links">
-                <a href="#">Recuperar Contraseña</a>
-                <a href="./crear.html">Crear Cuenta</a>
-            </div>
-
-            <button type="submit">Entrar</button>
-        </form>
+    <div id="iphone">
+        <div id="iphone-content">
+            <main class="main-content">
+                <div class="login-container">
+                    <h1>Ingresa tu Cuenta de Superheroe</h1>
+                    <form action="./principal.html" method="get">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Invalido@gmail.com" required>
+                
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="Ingresar Contraseña" required>
+                
+                        <div class="links">
+                            <a href="#">Recuperar Contraseña</a>
+                            <a href="./crear.html">Crear Cuenta</a>
+                        </div>
+                
+                        <button type="submit">Entrar</button>
+                    </form>
+                </div>
+            </main>
+        </div>
     </div>
+    <script src="accesibility.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>
+
+

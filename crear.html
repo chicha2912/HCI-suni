@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Cuenta</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             display: flex;
@@ -103,47 +103,57 @@
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h1>Crea tu Identidad Secreta</h1>
-        <form action="./principal.html" method="get">
-            <label for="correo">Correo</label>
-            <input type="email" id="correo" name="correo" placeholder="Correo*" required>
+    <div id="iphone">
+        <div id="iphone-content">
+            <main class="main-content">
 
-            <div class="grid">
-                <div>
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre*" required>
-                </div>
-                <div>
-                    <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Apellido*" required>
-                </div>
-            </div>
-
-            <label for="heroe">Nombre de Heroe</label>
-            <input type="text" id="heroe" name="heroe" placeholder="Ingresar tu nombre de Heroe" required>
-
-            <label for="contrasena">Contraseña</label>
-            <input type="password" id="contrasena" name="contrasena" placeholder="Ingresar tu Contraseña" required>
-
-            <p class="warning">Mínimo 9999 caracteres</p>
-
-            <div class="checkbox-group">
-                <label>
-                    <input type="checkbox" required>
-                    Acepto los términos y condiciones
-                </label>
-            </div>
-
-            <div class="checkbox-group">
-                <label>
-                    <input type="checkbox">
-                    Acepto recibir notificaciones
-                </label>
-            </div>
-
-            <button href="./login.html" type="submit">Continuar</button>
-        </form>
+                <div class="form-container">
+                    <h1>Crea tu Identidad Secreta</h1>
+                    <form action="./principal.html" method="get">
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" placeholder="Correo*" required>
+                
+                        <div class="grid">
+                            <div>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Nombre*" required>
+                            </div>
+                            <div>
+                                <label for="apellido">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" placeholder="Apellido*" required>
+                            </div>
+                        </div>
+                
+                        <label for="heroe">Nombre de Heroe</label>
+                        <input type="text" id="heroe" name="heroe" placeholder="Ingresar tu nombre de Heroe" required>
+                
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresar tu Contraseña" required>
+                
+                        <p class="warning">Mínimo 9999 caracteres</p>
+                
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" required>
+                                Acepto los términos y condiciones
+                            </label>
+                        </div>
+                
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox">
+                                Acepto recibir notificaciones
+                            </label>
+                        </div>
+                
+                        <button href="./login.html" type="submit">Continuar</button>
+                    </form>
+                </div> 
+            </main>
+        </div>
     </div>
+    <script src="accesibility.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>
+
