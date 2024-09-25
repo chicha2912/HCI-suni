@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="iphone">
+        <div id="iphone-content">
+            <div class="top">
+                <header class="logo">
+                    <a href="index.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                </header>
+                <nav class="icons">
+                    <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
+                    <a><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
+                </nav>
+            </div>
+
+            <div id="menu-desplegable" class="menu-desplegable">
+                <div class="menu-header">
+                    <span class="menu-close" onclick="cerrarMenu()">✖</span>
+                </div>
+                <ul class="menu-list">
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="carrito.html">Carrito de compras</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
+                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
+                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                </ul>
+                <div class="menu-buttons">
+                    <button class="btn-registro">Registrarse</button>
+                    <button class="btn-login">Iniciar sesión</button>
+                </div>
+            </div>
+
+            <!-- Contenido Principal -->
+            <main class="main-content">
+                <section class="producto-detalle">
+                    <h1 class="producto-titulo">Casco multiusos</h1>
+                    <p class="producto-descripcion">Un casco para viajes en el tiempo.</p>
+
+                    <div class="producto-imagen">
+                        <img src="./public/images/product1.png" alt="Casco multiusos" class="img-principal">
+                        <div class="imagen-miniaturas">
+                            <img src="./public/images/product1.png" alt="Miniatura 1">
+                            <img src="./public/images/product1.png" alt="Miniatura 2">
+                        </div>
+                    </div>
+
+                    <div class="producto-tallas">
+                        <button class="talla">XS</button>
+                        <button class="talla">S</button>
+                        <button class="talla">M</button>
+                        <button class="talla">L</button>
+                        <button class="talla">XL</button>
+                    </div>
+
+                    <div class="producto-acciones">
+                        <button class="btn-agregar">Agregar al carrito</button>
+                        <button class="btn-favoritos">Añadir a favoritos</button>
+                    </div>
+
+                    <p class="producto-descripcion-larga">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                    <!-- Envíos y devoluciones -->
+                    <div class="envios-devoluciones">
+                      <div class="toggle-text" onclick="toggleEnvios()">
+                          Envíos y devoluciones gratis <span id="toggle-icon">▼</span>
+                      </div>
+                      <div id="envios-contenido" class="contenido-oculto">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      </div>
+                  </div>
+                  
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+    <script>
+        function toggleEnvios() {
+            const contenido = document.getElementById('envios-contenido');
+            const icon = document.getElementById('toggle-icon');
+            if (contenido.classList.contains('contenido-oculto')) {
+                contenido.classList.remove('contenido-oculto');
+                icon.textContent = '▲';
+            } else {
+                contenido.classList.add('contenido-oculto');
+                icon.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>
