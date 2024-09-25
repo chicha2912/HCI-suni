@@ -97,6 +97,9 @@
             text-align: left;
             margin-bottom: 20px;
         }
+        #generar{
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -104,11 +107,16 @@
         <div id="iphone-content">
             <main class="main-content">
                 <div class="login-container">
-                    <h1>Revisa tu correo y crea una nueva clave</h1>
+                    <h1>Ingresa tu correo, luego el codigo y crea una nueva clave</h1>
                     <form action="./login.html" method="get">
+                        <label for="text">Correo</label>
+                        <input type="text" id="text" name="text" placeholder="Ingresa tu correo" required>
+                
+                        <button type="reset" id="generar">Generar codigo</button>
+
                         <label for="text">Codigo de reinicio</label>
                         <input type="text" id="text" name="text" placeholder="Revisa tu correo" required>
-                
+
                         <label for="contrasena">Contraseña</label>
                         <input type="password" id="contrasena" name="contrasena" placeholder="Nueva contraseña" required>
 
