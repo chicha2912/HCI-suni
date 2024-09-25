@@ -22,7 +22,47 @@
         .portada-container{
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            gap: 2px;
             margin-bottom: 5px;
+        }
+        .producto-tallas{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 20px;
+            gap: 10px;
+        }
+        .talla{
+            cursor: pointer;
+            background-color: white;
+            border: 2px solid #007bff;
+            color: #007bff;
+            width: 70px;
+        }
+        .talla:hover {
+            background-color: #e6f0ff;
+        }
+        .producto-acciones{
+            gap: 10px;
+        }
+        #sin-margin{
+            margin-right: 0; 
+        }
+        .producto-descripcion-larga{
+            margin-top: 20px;
+        }
+        #favoritos{
+            cursor: pointer;
+            background-color: white;
+            border: 2px solid #007bff;
+            color: #007bff;
+        }
+        #favoritos:hover {
+            background-color: #e6f0ff;
+        }
+        .talla.selected {
+            background-color: #007bff; /* Color al ser seleccionado */
+            color: white; /* Color del texto al ser seleccionado */
         }
     </style>
     
@@ -78,35 +118,38 @@
                     </div>
 
                     <div class="producto-tallas">
-                        <button class="talla">XS</button>
-                        <button class="talla">S</button>
-                        <button class="talla">M</button>
-                        <button class="talla">L</button>
-                        <button class="talla">XL</button>
+                        <button class="talla" onclick="toggleColors(this)">XS</button>
+                        <button class="talla" onclick="toggleColors(this)">S</button>
+                        <button class="talla" onclick="toggleColors(this)">M</button>
+                        <button class="talla" onclick="toggleColors(this)">L</button>
+                        <button class="talla" onclick="toggleColors(this)">XL</button>
                     </div>
 
                     <div class="producto-acciones">
-                        <button class="btn-agregar">Agregar al carrito</button>
-                        <button class="btn-favoritos">Añadir a favoritos</button>
+                        
+                        <a href="./favoritos.html"><button class="btn-favoritos" id="favoritos">Añadir a favoritos</button></a>
+                        <a href="./carrito.html"><button class="btn-agregar" id="sin-margin" >Agregar al carrito</button></a>
                     </div>
 
-                    <p class="producto-descripcion-larga">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="producto-descripcion-larga">        
+                        El SUPE-278 es un innovador sistema de protección diseñado para mejorar la electrificación en entornos críticos. Este dispositivo ofrece una defensa de última generación contra sobrecargas y cortocircuitos, garantizando la seguridad y la continuidad del suministro eléctrico. Su avanzada tecnología permite una respuesta rápida y eficiente, minimizando el riesgo de fallas y daños en los equipos conectados. Con un diseño compacto y fácil de integrar, el SUPE-278 se adapta perfectamente a diversas aplicaciones industriales y comerciales, proporcionando una solución confiable y duradera para la protección eléctrica en el siglo XXI.
+                    </p>
 
-                    <!-- Envíos y devoluciones -->
-                    <div class="envios-devoluciones">
-                      <div class="toggle-text" onclick="toggleEnvios()">
-                          Envíos y devoluciones gratis <span id="toggle-icon">▼</span>
-                      </div>
-                      <div id="envios-contenido" class="contenido-oculto">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                  </div>
                   
                     </div>
                 </section>
             </main>
         </div>
     </div>
+    <script>
+        function toggleColors(button) {
+            const previouslySelected = document.querySelector('.talla.selected');
+            if (previouslySelected && previouslySelected !== button) {
+                previouslySelected.classList.remove('selected');
+            }
+            button.classList.toggle('selected');
+        }
+    </script>
     <script src="accesibility.js"></script>
     <script src="menu.js"></script>
 </body>
