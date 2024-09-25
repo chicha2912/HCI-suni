@@ -58,6 +58,22 @@
             height: 20px;
             cursor: pointer;
         }
+        .filters{
+            gap: 10px;
+        }
+        #buscar{
+            margin: 0;
+            padding: 10px 18px
+        }
+        h1{
+            margin-bottom: 15px;
+        }
+        .product-grid{
+            margin-bottom: 20px;
+        }
+        #resultados{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -95,33 +111,47 @@
             </div>
             <main class="main-content">
                 <!-- Filtros y título -->
-                <h1>Novedades</h1>
+                <h1>Busqueda</h1>
                 <div class="filters">
-                    <p>4 resultados</p>
+                    <input type="text" id="buscar">
+                    <button onclick="mostrarResultados()">Buscar</button>
+                </div>
+                <div class="filters">
+                    <p id="resultados-titulo">0 resultados</p>
                     <button onclick="openPopup('filter-popup')"><img src="./public/icons/filter.png" alt="Filtros"> Filtros</button>
                 </div>
 
                 <!-- Productos -->
-                <div class="product-grid">
+                <div id="resultados" class="product-grid">
                     <div class="product-card">
                         <img src="./public/images/product1.png" alt="Lentes de visión nocturna">
                         <p>SUPE-278</p>
                         <p class="price">S/ 55.99</p>
                     </div>
                     <div class="product-card">
-                      <img src="./public/images/product4.png" alt="Gorro de mago">
-                      <p>Gorro de fuego</p>
-                      <p class="price">S/ 69.99</p>
+                        <img src="./public/images/product2.png" alt="Capa verde">
+                        <p>Capa de invisibilidad</p>
+                        <p class="price">S/ 55.99</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="./public/images/product3.jpg" alt="Casco de visión nocturna">
+                        <p>Mago de magia</p>
+                        <p class="price">S/ 55.99</p>
+                    </div>
+                    <div class="product-card">
+                      <img src="./public/images/product4.png" alt="Lentes de visión nocturna">
+                      <p>Guantelete del tiempo</p>
+                      <p class="price">S/ 55.99</p>
                   </div>
                   <div class="product-card">
-                      <img src="./public/images/product2.png" alt="Capa verde">
-                      <p>Capa de invisibilidad</p>
-                      <p class="price">S/ 59.99</p>
-                  </div>
-                  <div class="product-card">
-                      <img src="./public/images/product3.jpg" alt="Casco de visión nocturna">
+                      <img src="./public/images/product5.png" alt="Capa verde">
                       <p>Lentes de visión nocturna</p>
-                      <p class="price">S/ 35.99</p>
+                      <p class="price">S/ 55.99</p>
+                  </div>
+                  <div class="product-card">
+                      <img src="./public/images/product6.png" alt="Casco de visión nocturna">
+                      <p>Gadget misterioso</p>
+                      <p class="price">S/ 55.99</p>
                   </div>
                     <!-- Agrega más productos aquí -->
                 </div>
@@ -266,6 +296,12 @@
         function closePopup(popupId) {
             document.getElementById(popupId).style.display = 'none';
         }
+
+        function mostrarResultados() {
+            document.getElementById('resultados').style.display = 'grid';
+            document.getElementById('resultados-titulo').textContent = '6 resultados';
+        }
+
     </script>
 </body>
 </html>
