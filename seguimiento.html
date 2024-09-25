@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .main-content h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .product-detail, .order-summary {
+            border: 1px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .product-detail img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .product-info h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-info select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cart-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-info p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .order-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .order-summary .row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1em;
+        }
+
+        .order-summary h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .order-summary .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .continue {
+            background-color: white;
+            color: blue;
+            border: 1px solid blue;
+        }
+
+        .checkout {
+            background-color: blue;
+            color: white;
+        }
+
+        .continue:hover {
+            background-color: #f0f0f0;
+        }
+
+        .checkout:hover {
+            background-color: #0056b3;
+        }
+
+        .related-products {
+            margin-top: 30px;
+        }
+        .related-products h3 {
+            margin-bottom: 10px;
+        }
+
+        .related-products h2 {
+            text-align: left;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .products-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .product-description {
+            text-align: center;
+            font-size: 1em;
+            margin-top: 5px;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .cart-info{
+            display: block;
+        }
+        .container {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items:start;
+            justify-content: left;
+        }
+        .step {
+            display: flex;
+            position: relative;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .step .circle {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #007bff;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .step .circle.completed {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .step .line {
+            width: 2px;
+            height: 50px;
+            background-color: #007bff;
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+        .step-label {
+            margin-top: 7px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="iphone">
+        <div id="iphone-content">
+            <div class="top">
+                <header class="logo">
+                    <a href="principal.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                </header>
+                <nav class="icons">
+                    <a href="./busqueda.html"><img src="./public/icons/search.png" alt="Busqueda"></a>
+                    <a href="./perfil.html"><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="./carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
+                </nav>
+            </div>
+
+            <div id="menu-desplegable" class="menu-desplegable">
+                <div class="menu-header">
+                    <span class="menu-close" onclick="cerrarMenu()">✖</span>
+                </div>
+                <ul class="menu-list">
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
+                </ul>
+                <div class="menu-buttons">
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
+                    <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
+                </div>
+            </div>
+
+            <main class="main-content">
+                <section>
+                    <h1>Seguimiento</h1>
+                    <div class="cart-info">
+                        <p>Pedido #32123</p>
+                        <p>1 producto | $ 99.99</p>
+                    </div>
+
+                    <div class="product-detail">
+                        <img src="./public/images/product1.png" alt="Producto">
+                        <div class="product-info">
+                            <h2>SUPE-278</h2>
+                            <p>Talla</p>
+                            <strong>S</strong>
+                            <p>Cantidad</p>
+                            <strong>1</strong>
+                        </div>
+                    </div>
+
+                    <h2>Progreso</h2>
+
+                    <div class="container">
+                        <div class="step">
+                            <div class="circle completed">✔</div>
+                            <div class="step-label">Comprado</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="step">
+                            <div class="circle completed">✔</div>
+                            <div class="step-label">Enviado</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="step">
+                            <div class="circle"> </div>
+                            <div class="step-label">En reparto</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="step">
+                            <div class="circle"> </div>
+                            <div class="step-label">Entregado</div>
+                        </div>
+                    </div>
+                    
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="accesibility.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>
