@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        h3{
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
     <div id="iphone">
@@ -26,40 +31,43 @@
                 </div>
                 <ul class="menu-list">
                     <li><a href="novedades.html">Novedades</a></li>
-                    <li><a href="carrito.html">Carrito de compras</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
-                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
-                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
                 </ul>
                 <div class="menu-buttons">
-                    <a href="crear.html"><button class="btn-registro">Registrarse</button></a>
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
                     <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
                 </div>
             </div>
             <main class="main-content">
                 <section class="profile-section">
                   <div class="profile-header">
-                    <h1>Detalles de cuenta</h1>
+                    <h1>Datos de la cuenta</h1>
                   </div>
                   
                 </section>
-                <form action="editar_detalles_cuenta.html" method="get">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" id="nombre" name="nombre" placeholder="Eustaquio" disabled>
+                <form id="detalles" action="editar_detalles_cuenta.html" method="get">
+                    <label for="nombre">Nombre</label>
+                    <h3 id="nombre">Peter</h3>
+                    
+                    <label for="apellido">Apellido</label>
+                    <h3 id="apellido">Parker</h3>
 
-                  <label for="apellido">Apellido</label>
-                  <input type="text" id="apellido" name="apellido" placeholder="De La Torre" disabled>
-
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="Invalido@gmail.com" disabled>
-      
-                  <label for="password">Contraseña</label>
-                  <input type="password" id="password" name="password" value="43225363458" disabled>
-      
-                  <button type="submit">Editar datos</button>
+                    <label for="apellido">Nombre de heroe</label>
+                    <h3 id="apellido">Spiderman</h3>
+                    
+                    <label for="email">Email</label>
+                    <h3 id="email">pparker@gmail.com</h3>
+                    
+                    <label for="password">Contraseña</label>
+                    <h3 id="password">********</h3>
+                    
+                  <button type="submit" class="alt-button">Editar datos</button>
               </form>
             </main>
         </div>

@@ -143,105 +143,180 @@
             font-size: 5em;
             color: white;
         }
+        .alt-button{
+            margin: 0;
+        }
+        .selectable {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f0f0f0;  /* Color de fondo inicial */
+            border: 1px solid #ccc;     /* Borde suave */
+            border-radius: 5px;
+            cursor: pointer;           /* Cambia el cursor al pasar por encima */
+            transition: background-color 0.3s;
+        }
+        .selectable.selected {
+            background-color: #d3d3d3;  /* Color de fondo cuando está seleccionado */
+        }
+        .radio-label input[type="radio"] {
+            display: none;
+        }
+
+/* Estiliza el contenedor para que luzca clicable */
+.radio-label span{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    left: 0;
+    margin: 0;
+}
+.radio-label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambia el estilo cuando está seleccionado */
+.radio-label input[type="radio"]:checked + span {
+    background-color: #e0e0e0;
+    border-color: #000;
+}
+
+/* Estilo adicional al pasar el cursor */
+.radio-label:hover {
+    background-color: #f0f0f0;
+}
+.delivery-details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.payment-details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+span{
+    
+}
     </style>
 </head>
 <body>
     <div id="iphone">
         <div id="iphone-content">
-        <div class="top">
-            <header class="logo">
-                <a href="principal.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
-            </header>
-            <nav class="icons">
-                <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
-                <a href="./perfil.html"><img src="./public/icons/profile-user.png" alt="Perfil"></a>
-                <a href="./carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
-                <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
-            </nav>
-        </div>
-        <div id="menu-desplegable" class="menu-desplegable">
-            <div class="menu-header">
-                <span class="menu-close" onclick="cerrarMenu()">✖</span>
+            <div class="top">
+                <header class="logo">
+                    <a href="principal.html"><img src="./public/icons/shield.png" alt="Supershop"></a>
+                </header>
+                <nav class="icons">
+                    <a href="xd"><img src="./public/icons/search.png" alt="Busqueda"></a>
+                    <a href="./perfil.html"><img src="./public/icons/profile-user.png" alt="Perfil"></a>
+                    <a href="./carrito.html"><img src="./public/icons/shopping-bag.png" alt="Carrito"></a>
+                    <a href="#" onclick="abrirMenu()"><img src="./public/icons/bars.png" alt="Menú"></a>
+                </nav>
             </div>
-            <ul class="menu-list">
-                <li><a href="novedades.html">Novedades</a></li>
-                <li><a href="carrito.html">Carrito de compras</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li>
-                <li><a href="favoritos.html">Favoritos</a></li>
-                <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
-                <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
-                <li><a href="metodos_pago.html">Métodos de pago</a></li>
-            </ul>
-            <div class="menu-buttons">
-                <a href="crear.html"><button class="btn-registro">Registrarse</button></a>
-                <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
+            <div id="menu-desplegable" class="menu-desplegable">
+                <div class="menu-header">
+                    <span class="menu-close" onclick="cerrarMenu()">✖</span>
+                </div>
+                <ul class="menu-list">
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
+                </ul>
+                <div class="menu-buttons">
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
+                    <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
+                </div>
             </div>
-        </div>
             <main class="main-content">
                 <h1>Detalles del pedido</h1>
 
                 <section class="delivery-details">
                     <h2>Dirección de Entrega</h2>
-                    <input type="text" value="Dirección 1" disabled>
-                    <input type="text" value="Dirección 2" disabled>
+                    <label class="radio-label">
+                        <input type="radio" name="direccion" class="selectable">
+                        <span>Calle el Palmar 155</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="direccion" class="selectable">
+                        <span>Avenida Las Retamas 520</span>
+                    </label>
                     <button class="button-small" onclick="openPopup('address-popup')">Agregar Nueva Dirección</button>
                 </section>
 
                 <section class="payment-details">
                     <h2>Opciones de Pago</h2>
-                    <input type="text" value="Yape" disabled>
-                    <input type="text" value="Plin" disabled>
-                    <input type="text" value="Tarjeta 1" disabled>
+                    <label class="radio-label">
+                        <input type="radio" name="pago" class="selectable">
+                        <span>Yape</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="pago" class="selectable">
+                        <span>Plin</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="pago" class="selectable">
+                        <span>Tarjeta ********3497</span>
+                    </label>
                     <button class="button-small" onclick="openPopup('card-popup')">Agregar Nueva Tarjeta</button>
                 </section>
 
-                <button class="checkout" onclick="showSuccessPopup()">Compra Ya !!!!!</button>
+                <button class="checkout" onclick="showSuccessPopup()">Completar compra</button>
             </main>
         </div>
-    </div>
 
-    <div class="popup" id="address-popup">
-        <h2>Nueva Dirección</h2>
-        <select>
-            <option>Departamento</option>
-        </select>
-        <select>
-            <option>Provincia</option>
-        </select>
-        <input type="text" placeholder="Dirección*" required>
-        <input type="text" placeholder="Dpto/Casa/Oficina" required>
-        <input type="text" placeholder="Número de Contacto*" required>
-        <textarea placeholder="Referencia"></textarea>
-        <div class="popup-buttons">
-            <button>Agregar Dirección</button>
-            <button class="close-btn" onclick="closePopup('address-popup')">Cerrar</button>
+        <div class="popup" id="address-popup">
+            <h2>Nueva Dirección</h2>
+            <select>
+                <option>Departamento</option>
+            </select>
+            <select>
+                <option>Provincia</option>
+            </select>
+            <input type="text" placeholder="Dirección*" required>
+            <input placeholder="Referencia"></input>
+            <div class="popup-buttons">
+                <button class="alt-button" onclick="closePopup('address-popup')">Cancelar</button>
+                <button>Agregar direccion</button>
+            </div>
         </div>
-    </div>
+    
+        <div class="popup" id="card-popup">
+            <h2>Tarjeta de Crédito/Débito</h2>
+            <input type="text" placeholder="Número de tarjeta" required>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" placeholder="MM/AA" style="flex: 1;" required>
+                <input type="text" placeholder="CVV" style="flex: 1;" required>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="credit-card" />
+                <label for="credit-card">Guardar Tarjeta</label>
+            </div>
+            <div class="popup-buttons">
+                <button class="alt-button" onclick="closePopup('card-popup')">Cerrar</button>
+                <button>Agregar Tarjeta</button>
+            </div>
+        </div>
+    
+        <div class="popup-success" id="success-popup">
+            <h2>Compra Exitosa</h2>
+            <div class="check-icon"></div>
+        </div>
 
-    <div class="popup" id="card-popup">
-        <h2>Tarjeta de Crédito/Débito</h2>
-        <input type="text" placeholder="Número de tarjeta" required>
-        <div style="display: flex; gap: 10px;">
-            <input type="text" placeholder="MM/AA" style="flex: 1;" required>
-            <input type="text" placeholder="CVV" style="flex: 1;" required>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="credit-card" />
-            <label for="credit-card">Guardar Tarjeta</label>
-        </div>
-        <div class="popup-buttons">
-            <button>Agregar Tarjeta</button>
-            <button class="close-btn" onclick="closePopup('card-popup')">Cerrar</button>
-        </div>
-    </div>
 
-    <div class="popup-success" id="success-popup">
-        <h2>Compra Exitosa !!!!</h2>
-        <div class="check-icon"></div>
     </div>
-
     <script>
+
         function openPopup(popupId) {
             document.getElementById(popupId).style.display = 'block';
         }
@@ -251,7 +326,13 @@
         }
 
         function showSuccessPopup() {
-            document.getElementById('success-popup').style.display = 'block';
+            const popup = document.getElementById('success-popup');
+            popup.style.display = 'block';  // Muestra el popup
+            
+            // Después de 5 segundos (5000 ms), oculta el popup
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 5000);
         }
     </script>
     <script src="accesibility.js"></script>

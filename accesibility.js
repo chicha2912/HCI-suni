@@ -38,10 +38,8 @@ accessibility.innerHTML = `
                 <li>
                     <div>Tipo de fuente</div>
                     <select id="font-select">
-                        <option value="default" selected>Por defecto</option>
+                        <option value="arial" selected>Arial (deafult)</option>
                         <option value="verdana">Verdana</option>
-                        <option value="arial">Arial</option>
-                        Tahoma
                         <option value="tahoma">Tahoma</option>
                     </select>
                 </li>
@@ -80,19 +78,23 @@ accessibility.innerHTML = `
             <ul>
                 <li>
                     <div>Color de fuente</div>
-                    <input type="color" class="color-selector" id="font-color-selector">
-                    <button id="font-color-cancel" class="accessibility-buttons">Cancelar</button>
+                    <div>
+                        <input type="color" class="color-selector" id="font-color-selector">
+                        <button id="font-color-cancel" class="accessibility-buttons">Cancelar</button>
+                    </div>
                 </li>
                 <li>
                     <div>Color de fondo</div>
+                    <div>
                     <input type="color" class="color-selector" value="#ffffff" id="background-color-selector">
                     <button id="background-color-cancel" class="accessibility-buttons">Cancelar</button>
+                    </div>
                 </li>
                 <li>
                     <div>Contraste</div>
                     <select id="contraste-select">
                         <option value="1" selected>Normal</option>
-                        <option value="1.5">Claro</option>
+                        <option value="1.5">Alto</option>
                     </select>
                 </li>
                 <li>

@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .profile-section{
+            margin-bottom: 0;
+        }
+        .related-products{
+            margin-top: 20px;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div id="iphone">
@@ -26,16 +38,16 @@
                 </div>
                 <ul class="menu-list">
                     <li><a href="novedades.html">Novedades</a></li>
-                    <li><a href="carrito.html">Carrito de compras</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
-                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
-                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
                 </ul>
                 <div class="menu-buttons">
-                    <a href="crear.html"><button class="btn-registro">Registrarse</button></a>
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
                     <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
                 </div>
             </div>
@@ -46,43 +58,50 @@
                     </div>
                   </section>
                   <section class="related-products">
-                      <div class="products-container">
-                          <div class="product">
-                              <img src="./public/images/product9.png" alt="Zapatillas reforzadas">
-                          </div>
-                          <div class="product">
-                              <img src="./public/images/product5.png" alt="Guantelete del tiempo">
-                          </div>
-                      </div>
-                      <div class="products-container">
-                          <div class="product-description">Zapatillas reforzadas</div>
-                          <div class="product-description">Guantelete del tiempo</div>
-                      </div>
-                      <div class="products-container">
+
+                    <div class="products-container" id="no-margin">
                         <div class="product">
-                            <img src="./public/images/product7.jpg" alt="Gafas de vision nocturna">
+                            <a href="./producto-detalle.html">
+                            <img src="./public/images/product9.png" alt="Nuevo supertraje">
+                            <div class="product-description extra-margin">Nuevo supertraje</div>
+                            </a>
                         </div>
                         <div class="product">
+                            <a href="./producto-detalle.html">
+                            <img src="./public/images/product5.png" alt="Guardabrazos del tiempo">
+                            <div class="product-description extra-margin">Guardabrazos del tiempo</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="products-container" id="no-margin">
+                        <div class="product">
+                            <a href="./producto-detalle.html">
+                            <img src="./public/images/product7.jpg" alt="Nuevo supertraje">
+                            <div class="product-description">Nuevo supertraje</div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <a href="./producto-detalle.html">
+                            <img src="./public/images/product3.1.jpg" alt="Guardabrazos del tiempo">
+                            <div class="product-description">Guardabrazos del tiempo</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="products-container" id="no-margin">
+                        <div class="product">
+                            <a href="./producto-detalle.html">
+                            <img src="./public/images/product8.png" alt="Mochila del protector">
+                            <div class="product-description">"Mochila del protector</div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <a href="./producto-detalle.html">
                             <img src="./public/images/product3.1.jpg" alt="Casco de marine espacial">
+                            <div class="product-description">Casco de marine espacial</div>
+                            </a>
                         </div>
                     </div>
-                    <div class="products-container">
-                        <div class="product-description">Gafas de vision nocturna</div>
-                        <div class="product-description">Casco de marine espacial</div>
-                    </div>
-                    <div class="products-container">
-                      <div class="product">
-                          <img src="./public/images/product8.png" alt="Mochila del protector">
-                      </div>
-                      <div class="product">
-                          <img src="./public/images/product4.png" alt="Sombrero del comefuegos">
-                      </div>
-                  </div>
-                  <div class="products-container">
-                      <div class="product-description">Mochila del protector</div>
-                      <div class="product-description">Sombrero del comefuegos</div>
-                  </div>
-                  
                   </section>
             </main>
         </div>

@@ -114,83 +114,75 @@
                 </div>
                 <ul class="menu-list">
                     <li><a href="novedades.html">Novedades</a></li>
-                    <li><a href="carrito.html">Carrito de compras</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
-                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
-                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
                 </ul>
                 <div class="menu-buttons">
-                    <a href="crear.html"><button class="btn-registro">Registrarse</button></a>
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
                     <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
                 </div>
             </div>
             <main class="main-content">
                 <section class="profile-section">
                   <div class="profile-header">
-                    <h1>Direcciones guardadas</h1>
+                    <h1>Direcciones</h1>
                   </div>
                 </section>
 
-                <a href="anadir_direccion.html"><button type="submit" class="btn-add-direccion">Añadir dirección</button></a>
+                <a href="anadir_direccion.html"><button type="submit" class="btn-add-direccion">Agregar nueva dirección</button></a>
 
                 <form class="form-direcciones" action="editar_direccion.html" method="get">
                   <label for="direccion 1">Dirección 1</label>
                   <div class="input-group">
-                      <input type="text" id="direccion 1" name="direccion 1" placeholder="Calle el Palmar 155" disabled>
+                      <h3>Calle el Palmar 155</h3>
                       <div class="button-group">
-                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
                         <button class="edit-btn" type="submit">Editar</button>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
+                        
                       </div>
                   </div>
               
                   <label for="direccion 2">Dirección 2</label>
                   <div class="input-group">
-                      <input type="text" id="direccion 2" name="direccion 2" placeholder="Las Retamas 502" disabled>
+                    <h3>Avenida Las Retamas 520</h3>
                       <div class="button-group">
-                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
                         <button class="edit-btn" type="submit">Editar</button>
+                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
                       </div>
                   </div>
 
-                  <label for="direccion 3">Dirección 3</label>
-                  <div class="input-group">
-                      <input type="text" id="direccion 3" name="direccion 3" placeholder="Jr. El Salvador 701" disabled>
-                      <div class="button-group">
-                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
-                        <button class="edit-btn" type="submit">Editar</button>
-                      </div>
-                  </div>
-              
-                  <label for="direccion 4">Dirección 4</label>
-                  <div class="input-group">
-                      <input type="text" id="direccion 4" name="direccion 4" placeholder="Av. Los Quechuas" disabled>
-                      <div class="button-group">
-                        <button class="delete-btn" type="button" onclick="abrirModal()">Eliminar</button>
-                        <button class="edit-btn" type="submit">Editar</button>
-                      </div>
-                  </div>
               </form>
               
             </main>
         </div>
-    </div>
 
-    <div id="modalConfirmacion" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Advertencia">
-                <h2>¿Eliminar dirección?</h2>
-            </div>
-            <p>¿Estás seguro de que deseas eliminar esta dirección?</p>
-            <div class="modal-buttons">
-                <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
-                <button class="btn-confirmar" onclick="eliminarDireccion()">Eliminar</button>
+
+
+
+        <div id="modalConfirmacion" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Advertencia">
+                    <h2>¿Eliminar dirección?</h2>
+                </div>
+                <p>¿Estás seguro de que deseas eliminar esta dirección?</p>
+                <div class="modal-buttons">
+                    <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+                    <button class="btn-confirmar" onclick="eliminarDireccion()">Eliminar</button>
+                </div>
             </div>
         </div>
+
+
+
+
     </div>
+
 
     <script>
         function abrirModal() {

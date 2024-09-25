@@ -6,41 +6,54 @@
 
 body {
   display: flex;
+  font-family: Arial;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #f0f0f0;
   overflow: hidden; /* Evita que el cuerpo de la página haga scroll */
 }
-.main-content {
-  padding: 20px ;
-}
 
 #iphone {
   width: 375px; /* Ancho típico de iPhone */
   height: 812px; /* Alto típico de iPhone */
   background-color: #FFF;
-  border-radius: 30px;
+  border-radius: 20px;
   position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   border: #000;
   overflow-y: auto; /* Habilitar scroll vertical cuando el contenido exceda la altura */
   overflow-x: auto; /* Desactiva el scroll horizontal */
+  display: flex;
 }
+
+#iphone-content {
+  height: 100%;
+  width: 100%;
+}
+
+.main-content {
+  min-height: max-content;
+  margin: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
 
 .item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
   background-color: white;
   border-radius: 10px;
 }
+
 .essentials{
   display: flex;
   flex-direction: column;
   align-items: left;
   padding: 20px;
+  padding-top: 0;
   background-color: white;
   border-radius: 10px;
 }
@@ -95,7 +108,6 @@ body {
 
 .cart {
   background-color: white;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -107,7 +119,6 @@ body {
 
 .cart p {
   font-size: 1em;
-  margin-bottom: 20px;
 }
 
 .product-detail {
@@ -151,6 +162,7 @@ body {
 .buttons {
   display: flex;
   justify-content: space-between;
+  gap: 15px;
   margin-top: 20px;
 }
 
@@ -163,12 +175,12 @@ body {
 
 .buttons .continue {
   background-color: white;
-  border: 2px solid blue;
-  color: blue;
+  border: 2px solid #007bff;
+  color: #007bff;
 }
 
 .buttons .checkout {
-  background-color: blue;
+  background-color: #007bff;
   color: white;
 }
 
@@ -265,9 +277,19 @@ body {
   border: 0;
   background-color: darkgray;
   font-size: 0.8em;
-  padding: 2px 5px;
+  padding: 4px 7px;
   min-width: 20px;
   width: auto;
+}
+
+input[type="color"] {
+    width: 30px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
 .accessibility-buttons:hover {
@@ -353,8 +375,7 @@ body {
 }
 
 
-/* Ajuste de interlineado solo para los títulos */
-.profile-section h1, 
+/* Ajuste de interlineado solo para los títulos */ 
 .favorites-section h2 {
   line-height: normal; /* Mantener un interlineado estándar */
   margin-bottom: 15px; /* Añadir espaciado adecuado entre los títulos y el contenido */
@@ -428,8 +449,8 @@ button:hover {
 /* Estilo para los botones de Editar y Eliminar */
 .edit-btn {
   background-color: white;
-  border: 2px solid blue;
-  color: blue;
+  border: 2px solid #007bff;
+  color: #007bff;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -444,7 +465,6 @@ button:hover {
   color: red;
   padding: 5px 10px;
   cursor: pointer;
-  margin-left: 10px;
 }
 
 .delete-btn:hover {
@@ -454,7 +474,8 @@ button:hover {
 /* Alineación de los botones con los inputs */
 .input-group {
   display: flex;
-  flex-direction: column; /* Mantiene el input y los botones en columnas */
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px; /* Espacio entre cada grupo */
 }
 
@@ -468,6 +489,9 @@ button:hover {
   width: auto; /* Para que los botones no ocupen el 100% del ancho */
 }
 
+.logo a{
+  margin: 0;
+}
 
 header.logo img {
   width: 40px; /* Asegúrate de ajustar el tamaño del logo */
@@ -499,7 +523,7 @@ section {
 
 .essential-items {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .essential-items .item {
@@ -586,59 +610,33 @@ section {
 .menu-buttons {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 20px;
+  gap: 20px;
+  align-items: center;
 }
 
 .menu-buttons .btn-registro, .menu-buttons .btn-login {
   padding: 10px 20px;
   border-radius: 5px;
-  border: none;
+  border: 1px;
   cursor: pointer;
 }
 
 .menu-buttons .btn-registro {
   background-color: white;
-  border: 1px solid blue;
-  color: blue;
+  border: 1px solid #007bff;
+  color: #007bff;
 }
 
 .menu-buttons .btn-login {
-  background-color: blue;
+  background-color: #007bff;
+  border: 1px solid #007bff;
   color: white;
-}
-/* Estilos generales */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
-}
-
-#iphone-content {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: space-between;
-}
-
-.top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: white;
-  border-bottom: 1px solid #ddd;
 }
 
 nav.icons a img {
   width: 24px;
   margin: 0 10px;
-}
-
-.main-content {
-  padding: 20px;
-  flex-grow: 1;
-  overflow-y: auto;
 }
 
 /* Cuadrícula de productos */
@@ -736,9 +734,8 @@ footer p {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
 .filtros-section {
@@ -825,4 +822,17 @@ img {
 
 .contenido-visible {
   display: block; /* Mostramos el contenido al hacer clic */
+}
+
+.alt-button{
+  margin-top: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.alt-button:hover {
+  background-color: #e6f0ff;
 }

@@ -114,6 +114,9 @@
         .related-products {
             margin-top: 30px;
         }
+        .related-products h3 {
+            margin-bottom: 10px;
+        }
 
         .related-products h2 {
             text-align: left;
@@ -131,6 +134,10 @@
             text-align: center;
             font-size: 1em;
             margin-top: 5px;
+        }
+        a{
+            color: black;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -155,16 +162,16 @@
                 </div>
                 <ul class="menu-list">
                     <li><a href="novedades.html">Novedades</a></li>
-                    <li><a href="carrito.html">Carrito de compras</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
-                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
-                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
                 </ul>
                 <div class="menu-buttons">
-                    <a href="crear.html"><button class="btn-registro">Registrarse</button></a>
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
                     <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
                 </div>
             </div>
@@ -216,24 +223,26 @@
                     </div>
 
                     <div class="buttons">
-                        <button class="continue" onclick="window.location.href='principal.html'">Seguir Comprando</button>
-                        <button class="checkout" onclick="window.location.href='detalles.html'">Compra Ahora</button>
+                        <button class="continue" onclick="window.location.href='principal.html'">Continuar explorando</button>
+                        <button class="checkout" onclick="window.location.href='detalles.html'">Finalizar compra</button>
                     </div>
                 </section>
 
                 <section class="related-products">
-                    <h2>Productos Relacionados</h2>
-                    <div class="products-container">
+                    <h3>Productos Relacionados</h3>
+                    <div class="products-container" id="no-margin">
                         <div class="product">
-                            <img src="./public/images/product1.png" alt="Guardabrazos del tiempo">
+                            <a href="./producto-detalle.html">
+                                <img src="./public/images/product1.png" alt="Guardabrazos del tiempo">
+                                <div class="product-description">Guardabrazos del tiempo</div>
+                            </a>
                         </div>
                         <div class="product">
-                            <img src="./public/images/product2.png" alt="Lentes visión nocturna">
+                            <a href="./producto-detalle.html">
+                                <img src="./public/images/product2.png" alt="Lentes visión nocturna">
+                                <div class="product-description">Lentes visión nocturna</div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="products-container">
-                        <div class="product-description">Guardabrazos del tiempo</div>
-                        <div class="product-description">Lentes visión nocturna</div>
                     </div>
                 </section>
             </main>

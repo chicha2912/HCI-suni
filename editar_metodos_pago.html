@@ -26,41 +26,43 @@
                 </div>
                 <ul class="menu-list">
                     <li><a href="novedades.html">Novedades</a></li>
-                    <li><a href="carrito.html">Carrito de compras</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
-                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
-                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
                 </ul>
                 <div class="menu-buttons">
-                    <a href="crear.html"><button class="btn-registro">Registrarse</button></a>
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
                     <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
                 </div>
             </div>
             <main class="main-content">
                 <section class="profile-section">
                   <div class="profile-header">
-                    <h1>Nuevo metodo de pago</h1>
+                    <h1>Editar metodo de pago</h1>
                   </div>
                   
                 </section>
 
                 <form action="metodos_pago.html" method="get">
                   <label for="nombre">Nombre</label>
-                  <input type="text" id="nombre" name="nombre" placeholder="Eustaquio">
+                  <input type="text" id="nombre" name="nombre" placeholder="Peter">
 
                   <label for="numero">Numero</label>
-                  <input type="text" id="numero" name="numero" placeholder="**********23">
+                  <input type="text" id="numero" name="numero" placeholder="************3497
+                  ">
+
+                  <label for="vencimiento">Fecha de vencimiento</label>
+                  <input type="text" id="vencimiento" name="vencimiento" placeholder="**/**">
 
                   <label for="CVC">CVC</label>
                   <input type="text" id="CVC" name="CVC" placeholder="***">
       
-                  <label for="vencimiento">Fecha de vencimiento</label>
-                  <input type="text" id="vencimiento" name="vencimiento" placeholder="**/**">
-      
                   <button type="submit">Guardar</button>
+                  <button type="submit" class="alt-button">Cancelar</button>
               </form>
               
             </main>

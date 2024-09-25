@@ -4,395 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Superhéroes</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
+        .main-content{
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-
-        #iphone {
-            width: 375px;
-            height: 812px;
-            background-color: #FFF;
-            border-radius: 30px;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            overflow-y: auto;
-        }
-
-        .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            background-color: white;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .top a {
-            margin: 0px 5px;
-            text-decoration: none;
-        }
-
-        .top .icons {
-            display: flex;
-        }
-
-        .top .logo img {
-            width: 40px;
-            height: auto;
-        }
-
-        .top .icons img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .main-content {
-            padding: 0;
-        }
-
-        .product-highlight img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .highlight-text {
-            padding: 0 20px;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .highlight-text h2 {
-            margin-bottom: 10px;
-        }
-
-        .highlight-text p {
-            margin-bottom: 20px;
-        }
-
-        .recommended, .essentials {
-            margin-top: 20px;
-            padding: 0 20px;
-        }
-
-        .recommended .item, .essentials .item {
-            margin-bottom: 15px;
-        }
-
-        .recommended .item img, .essentials .item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .recommended .item h3, .essentials .item p {
-            margin-bottom: 10px;
-        }
-
-        .buy-button {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .essential-items {
-            display: flex;
-            justify-content: space-between; 
-            gap: 10px;
-        }
-
-        .essential-items .item {
-            width: 48%;
-            text-align: center;
-        }
-
-        .essential-items .item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .footer {
-            background-color: #f1f1f1;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .footer .help-links, .footer .social-media, .footer .legal {
-            margin-bottom: 10px;
-        }
-
-        .footer a {
-            color: #007bff;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-
-        .footer img {
-            width: 24px;
-            height: auto;
-        }
-        /* Menú desplegable */
-        .menu-desplegable {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 100%;
-            background-color: white;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-            transform: rotateY(90deg); /* Inicialmente oculto con rotación */
-            transform-origin: right;
-            transition: transform 0.4s ease;
-            z-principal: 9999;
-        }
-        
-        .menu-desplegable.active {
-            transform: rotateY(0deg); /* Mostramos el menú con rotación 0 */
-        }
-        
-        .menu-desplegable .menu-header {
-            padding: 20px;
-            display: flex;
-            justify-content: flex-end;
-        }
-        
-        .menu-desplegable .menu-close {
-            font-size: 24px;
-            color: black;
-            cursor: pointer;
-        }
-        
-        .menu-desplegable .menu-list {
-            list-style: none;
-            padding: 20px;
-        }
-        
-        .menu-desplegable .menu-list li {
-            margin-bottom: 20px;
-        }
-        
-        .menu-desplegable .menu-list li a {
-            text-decoration: none;
-            font-size: 18px;
-            color: #333;
-        }
-        
-        .menu-buttons {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-        
-        .menu-buttons .btn-registro, .menu-buttons .btn-login {
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .menu-buttons .btn-registro {
-            background-color: white;
-            border: 1px solid blue;
-            color: blue;
-        }
-        
-        .menu-buttons .btn-login {
-            background-color: blue;
-            color: white;
-        }
-
-        /* Accesibilidad */
-
-        .accessibility-button {
-            position: fixed;
-            transform: translate(-60px, 738px);
-            transform: translate(-70px, 340px);
-            background-color: #007AFF;
-            color: #FFF;
-            border-radius: 50%;
-            width: 50px; 
-            height: 50px;
-            display: flex; 
-            justify-content: center;
-            align-items: center;
-            font-size: 24px; 
-            cursor: pointer; 
-            border: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s; 
-        }
-        
-        .accessibility-button:hover {
-            background-color: #005BB5;
-        }
-        
-        .accessibility-menu {
-            position: fixed; /* Posicionamiento absoluto dentro del contenedor .iphone */
-            transform: translate(-310px, 128px);
-            transform: translate(-320px, -270px);
-            width: 300px; /* Ancho fijo del menú */
-            height: 600px; /* Alto máximo del menú */
-            background-color: #FFF; /* Color de fondo */
-            border: 1px solid #ccc; /* Borde del menú */
-            border-radius: 10px; /* Bordes redondeados */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del menú */
-            display: none; /* Ocultar por defecto */
-            z-principal: 10; /* Asegurarse de que esté por encima */
-            padding: 20px; /* Espaciado interno */
-            overflow-y: auto;
-        }
-        
-        .accessibility-menu ul {
-            list-style: none; /* Sin viñetas */
-            padding: 0; /* Sin padding */
-        }
-        
-        .accessibility-menu li {
-            padding: 15px 10px; /* Espaciado de las opciones */
-            cursor: default; /* Cambiar el cursor al pasar sobre las opciones */
-        }
-        
-        .accessibility-menu li:hover {
-            background-color: #f0f0f0; /* Color al pasar el mouse */
-        }
-        
-        .accessibility-buttons {
-            border: 0;
-            background-color: darkgray;
-            font-size: 0.8em;
-            padding: 2px 5px;
-            min-width: 20px;
-            width: auto;
-        }
-        
-        .accessibility-buttons:hover {
-            background-color: gray;
-        }
-        
-        .menu-title {
-            text-align: center; /* Centrar el texto */
-            margin-bottom: 15px; /* Espacio debajo del título */
-            font-size: 20px; /* Tamaño del título */
-            font-weight: bold; /* Negrita */
-            color: #333; /* Color del texto */
-        }
-        
-        .subsection {
-            background-color: #f9f9f9; /* Color de fondo del recuadro */
-            border: 1px solid #ccc; /* Borde del recuadro */
-            border-radius: 8px; /* Bordes redondeados */
-            padding: 10px; /* Espaciado interno */
-            margin-bottom: 10px; /* Espaciado entre subsecciones */
-            display: flex; /* Para alinear el título y el contenido */
-            flex-direction: column;
-        }
-        
-        .subsection span {
-            font-weight: bold; /* Negrita para el título de la subsección */
-            margin-bottom: 5px; /* Espacio debajo del título */
-        }
-        
-        .subsection ul {
-            list-style-type: none; /* Sin viñetas */
-            padding: 0; /* Sin padding */
-        }
-        
-        .subsection li {
-            display: flex; /* Alinear el texto y la imagen */
-            justify-content: space-between; /* Espaciado entre texto e imagen */
-            align-items: center; /* Alinear verticalmente */
-            padding: 5px 0; /* Espaciado entre opciones */
-        }
-        
-        .control-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .control-container div {
-            width: 38px;
-            text-align: center;
-        }
-        
-        .control-container button {
-            width: 15px;
-            height: 20px;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-        }
-        
-        .color-selector{
-            height: 20px;
-        }
-        
-        
-        /* Ajuste de alineación y espaciado de las pestañas en la barra de perfil */
-        .profile-tabs {
-            display: flex;
-            justify-content: space-between; /* Espacio distribuido entre los elementos */
-            width: 100%; /* Asegurar que las pestañas ocupen todo el ancho disponible */
-            padding: 10px 0;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        
-        .profile-tabs span {
-            flex: 1; /* Cada opción ocupará el mismo espacio */
-            text-align: center; /* Alinear el texto al centro de cada opción */
+        .highlight-text{
             margin: 0 10px;
         }
-        
-        
-        /* Ajuste de interlineado solo para los títulos */
-        .profile-section h1, 
-        .favorites-section h2 {
-            line-height: normal; /* Mantener un interlineado estándar */
-            margin-bottom: 15px; /* Añadir espaciado adecuado entre los títulos y el contenido */
+        .buy-button{
+            margin-top: 5px;
         }
-        
-        
-        /* Estilo para el "Ver todos" en la sección de favoritos */
-        .favorites-section h2 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        h3{
+            margin-top: 15px;
+            margin-bottom: 10px;
         }
-        
-        /* Estilo para el "Ver todos" sin el color de enlace predeterminado */
-        .view-all {
-        font-size: 0.9em;
-        color: inherit; /* Mantiene el color del texto predeterminado */
-        text-decoration: none; /* Quitar subrayado */
-        cursor: pointer;
+        .recommended{
+            padding-top: 40px;
+            margin: 0 20px;
         }
-        
-        .view-all:hover {
-        text-decoration: underline; /* Solo se subraya cuando el cursor está sobre él */
+        .recommended .item{
+            padding-bottom: 20px;
         }
-        
+        .essentials{
+            padding-top: 0;
+        }
+        #esenciales{
+            margin-bottom: 10px;
+        }
+        .item p{
+            text-align: center;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
     </style>
     
 </head>
@@ -416,16 +64,16 @@
                 </div>
                 <ul class="menu-list">
                     <li><a href="novedades.html">Novedades</a></li>
-                    <li><a href="carrito.html">Carrito de compras</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
-                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
-                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
                 </ul>
                 <div class="menu-buttons">
-                    <a href="crear.html"><button class="btn-registro">Registrarse</button></a>
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
                     <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
                 </div>
             </div>
@@ -435,59 +83,45 @@
                 </section>
                 
                 <section class="highlight-text">
-                    <h2>Nueva adquisición: SUPE-278</h2>
+                    <h2>Nueva adquisición:</h2>
+                    <h1>SUPE-278</h1>
                     <p>Protección de última y mejora en la electrificación</p>
+                    <a href="./producto-detalle.html" class="buy-button">Compra ahora</a>
                 </section>
 
                 <section class="recommended">
                     <div class="item">
                         <img src="./public/images/product2.png" alt="Capa de Electricidad">
                         <h3>Capa de Electricidad</h3>
-                        <a href="#" class="buy-button">Compra ahora</a>
+                        <a href="./producto-detalle.html" class="buy-button">Compra ahora</a>
                     </div>
-
                     <div class="item">
                         <img src="./public/images/product3.1.jpg" alt="Fuerza Cósmica">
                         <h3>Fuerza Cósmica</h3>
-                        <a href="#" class="buy-button">Compra ahora</a>
+                        <a href="./producto-detalle.html" class="buy-button">Compra ahora</a>
                     </div>
                 </section>
                 
                 <section class="essentials">
-                    <h3>ESENCIALES</h3>
+                    <h3 id="esenciales">ESENCIALES</h3>
                     <div class="essential-items">
+                        
                         <div class="item">
+                            <a href="./producto-detalle.html">
                             <img src="./public/images/product3.jpg" alt="Guardabrazos del tiempo">
                             <p>Guardabrazos del tiempo</p>
+                            </a>
                         </div>
-
+                        
                         <div class="item">
+                            <a href="./producto-detalle.html">
                             <img src="./public/images/product4.png" alt="Lentes visión nocturna">
                             <p>Lentes visión nocturna</p>
+                            </a>
                         </div>
                     </div>
                 </section>
 
-                <footer class="footer">
-                    <div class="help-links">
-                        <a href="#">Hazte miembro</a>
-                        <a href="#">Obtén ayuda</a>
-                        <a href="#">Acerca</a>
-                    </div>
-
-                    <div class="social-media">
-                        <a href="#"><img src="./public/icons/instagram.png" alt="Instagram"></a>
-                        <a href="#"><img src="./public/icons/facebook.png" alt="Facebook"></a>
-                        <a href="#"><img src="./public/icons/twitter.png" alt="Twitter"></a>
-                        <a href="#"><img src="./public/icons/youtube.png" alt="YouTube"></a>
-                    </div>
-
-                    <div class="legal">
-                        <p>© 2024 Superheroes Anónimos SAC</p>
-                        <a href="#">Términos y Condiciones</a>
-                        <a href="#">Política de Privacidad</a>
-                    </div>
-                </footer>
             </main>
         </div>
     </div>

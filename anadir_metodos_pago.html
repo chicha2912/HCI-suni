@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -33,24 +33,23 @@
                 </div>
                 <ul class="menu-list">
                     <li><a href="novedades.html">Novedades</a></li>
-                    <li><a href="carrito.html">Carrito de compras</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
                     <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="detalles_cuenta.html">Detalles de cuenta</a></li>
-                    <li><a href="direcciones_guardadas.html">Direcciones guardadas</a></li>
-                    <li><a href="metodos_pago.html">Métodos de pago</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="pedidos.html">Pedidos</a></li>
+                    <li><a href="detalles_cuenta.html">Mis datos</a></li>
+                    <li><a href="direcciones_guardadas.html">Mis direcciones</a></li>
+                    <li><a href="metodos_pago.html">Mis métodos de pago</a></li>
                 </ul>
                 <div class="menu-buttons">
-                    <a href="crear.html"><button class="btn-registro">Registrarse</button></a>
+                    <a href="crear.html"><button class="btn-registro">Únete</button></a>
                     <a href="login.html"><button class="btn-login">Iniciar sesión</button></a>
                 </div>
             </div>
             <main class="main-content">
                 <section class="profile-section">
                   <div class="profile-header">
-                    <h1 class="section-title">Configuración</h1>
-                    <h2>Nuevo metodo de pago</h2>
+                    <h1 class="section-title">Nuevo método de pago</h1>
                   </div>
                   
                 </section>
@@ -62,13 +61,14 @@
                   <label for="numero">Numero</label>
                   <input type="text" id="numero" name="numero">
 
+                  <label for="vencimiento">Fecha de vencimiento</label>
+                  <input type="text" id="vencimiento" name="vencimiento">
+
                   <label for="CVC">CVC</label>
                   <input type="text" id="CVC" name="CVC" >
       
-                  <label for="vencimiento">Fecha de vencimiento</label>
-                  <input type="text" id="vencimiento" name="vencimiento">
-      
                   <button type="submit">Guardar</button>
+                  <button type="submit" class="alt-button">Cancelar</button>
               </form>
               
             </main>
