@@ -77,7 +77,7 @@ accessibility.innerHTML = `
             <span>Color</span>
             <ul>
                 <li>
-                    <div>Color de fuente</div>
+                    <div>Color de letra</div>
                     <div>
                         <input type="color" class="color-selector" id="font-color-selector">
                         <button id="font-color-cancel" class="accessibility-buttons">Cancelar</button>
