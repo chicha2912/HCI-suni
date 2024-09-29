@@ -52,14 +52,6 @@ accessibility.innerHTML = `
                     </div>                        
                 </li>
                 <li>
-                    <div>Brillo</div>
-                    <div class="control-container" id="brillo-control">
-                        <button class="control-decrease accessibility-buttons">-</button>
-                        <div class="control-value">100%</div>
-                        <button class="control-increase accessibility-buttons">+</button>
-                    </div>
-                </li>
-                <li>
                     <div>Resaltar títulos</div>
                     <input type="checkbox" id="titulos-checkbox">
                 </li>
@@ -88,6 +80,14 @@ accessibility.innerHTML = `
                     <div>
                     <input type="color" class="color-selector" value="#ffffff" id="background-color-selector">
                     <button id="background-color-cancel" class="accessibility-buttons">Cancelar</button>
+                    </div>
+                </li>
+                <li>
+                    <div>Brillo</div>
+                    <div class="control-container" id="brillo-control">
+                        <button class="control-decrease accessibility-buttons">-</button>
+                        <div class="control-value">100%</div>
+                        <button class="control-increase accessibility-buttons">+</button>
                     </div>
                 </li>
                 <li>
